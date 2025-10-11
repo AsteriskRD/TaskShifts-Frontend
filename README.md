@@ -23,7 +23,6 @@ Before you begin, ensure you have the following installed:
 
     ```bash
     git clone <repository-url>
-    cd giglink
     ```
 
 2. **Install dependencies**
