@@ -1,4 +1,4 @@
-# GigLink
+# TaskShifts
 
 A modern web application built with Next.js, designed to connect freelancers with gig opportunities.
 
@@ -68,7 +68,7 @@ pnpm start
 ## 📁 Project Structure
 
 ```
-giglink/
+TaskShifts/
 ├── src/
 │   ├── app/              # App Router pages and layouts
 │   │   ├── layout.js     # Root layout
