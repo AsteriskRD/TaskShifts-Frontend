@@ -22,7 +22,7 @@ export default function Home() {
   }, [router]);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center px-4">
       <h1 className="text-4xl font-bold mb-6 text-blue-600">
         Welcome to TaskShifts
       </h1>
