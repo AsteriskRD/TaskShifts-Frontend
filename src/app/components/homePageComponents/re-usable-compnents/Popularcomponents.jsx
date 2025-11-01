@@ -34,7 +34,7 @@ const Popularcomponents = ({ item }) => {
           <CiStar className="text-white" size={20} /> <span>{item.rating}</span>
         </div>
         <div>
-          <button className="bg-[#003271] rounded-full px-3 py-1.5">
+          <button className="bg-[#003271] rounded-full text-white px-3 py-1.5">
             {item.btn}
           </button>
         </div>
