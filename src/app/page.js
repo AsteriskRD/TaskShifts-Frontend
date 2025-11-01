@@ -11,14 +11,14 @@ export default function Home() {
     // Check if there's an active user in localStorage
     const activeUser = JSON.parse(localStorage.getItem("activeUser"));
 
-    if (activeUser) {
+   /* if (activeUser) {
       // Redirect based on user role
       if (activeUser.role === "client") {
         router.push("/landing/client");
       } else if (activeUser.role === "provider") {
         router.push("/landing/provider");
       }
-    }
+    } */
   }, [router]);
 
   return (

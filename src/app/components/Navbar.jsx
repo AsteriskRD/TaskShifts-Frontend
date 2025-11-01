@@ -32,8 +32,8 @@ export default function Navbar() {
         <Image
           src={Logo}
           alt="logo"
-          width={48}
-          height={48}
+          width={50}
+          height={50}
           className="w-12 h-12"
         />
       </div>
