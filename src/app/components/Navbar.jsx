@@ -26,14 +26,14 @@ export default function Navbar() {
       : null;
 
   return (
-    <div className="fixed top-0 left-0 w-full z-30 bg-white px-4 lg:px-20 py-4 lg:py-6 font-bold flex lg:flex-row items-center justify-between text-light-900">
+    <div className=" w-full z-30 bg-white px-4 lg:px-20 py-4 lg:py-6 font-bold flex lg:flex-row items-center justify-between text-light-900">
       {/* Logo */}
       <div className="flex justify-center items-center">
         <Image
           src={Logo}
           alt="logo"
-          width={48}
-          height={48}
+          width={50}
+          height={50}
           className="w-12 h-12"
         />
       </div>
@@ -45,7 +45,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className={`font-medium text-base hover:text-primary-500 transition-all ${
+              className={`font-medium text-base hover:text-primary-500 transition-all text-primary-500 ${
                 pathname === link.href ? "text-primary-500" : ""
               }`}
             >
@@ -102,7 +102,7 @@ export default function Navbar() {
 
       {/* Mobile Dropdown */}
       <div
-        className={`lg:hidden overflow-hidden bg-white shadow-2xl rounded-sm transition-all duration-500 w-11/12 absolute top-20 m-auto left-0 right-0 text-center z-50 ${
+        className={`lg:hidden overflow-hidden bg-white shadow-2xl rounded-sm transition-all duration-500 w-[95%] absolute top-20 m-auto left-0 right-0 text-center z-50 mt-4 ${
           isOpen ? "h-auto py-4" : "max-h-0"
         }`}
       >
@@ -112,7 +112,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className={`hover:text-primary-500 transition-all ${
+              className={`hover:text-primary-500 text-primary-500 transition-all ${
                 pathname === link.href ? "text-primary-500" : ""
               }`}
             >
@@ -126,7 +126,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="px-10 py-2 rounded-md bg-primary-500 transition hover:scale-105 text-light-100"
             >
-              SignUp
+              Get Started
             </Link>
             <Link
               href="/login"

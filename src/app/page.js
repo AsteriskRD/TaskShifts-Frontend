@@ -11,18 +11,18 @@ export default function Home() {
     // Check if there's an active user in localStorage
     const activeUser = JSON.parse(localStorage.getItem("activeUser"));
 
-    if (activeUser) {
+   /* if (activeUser) {
       // Redirect based on user role
       if (activeUser.role === "client") {
         router.push("/landing/client");
       } else if (activeUser.role === "provider") {
         router.push("/landing/provider");
       }
-    }
+    } */
   }, [router]);
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center">
+    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-center px-4">
       <h1 className="text-4xl font-bold mb-6 text-blue-600">
         Welcome to TaskShifts
       </h1>
