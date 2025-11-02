@@ -64,7 +64,7 @@ const WhatUsersSay = () => {
           collaborate and grow. Here is what a few of them have to say
         </p>
       </div>
-      <div className="hidden sm:grid sm:grid-cols-2 md:grid-cols-4">
+      <div data-aos="fade-right" className="hidden sm:grid sm:grid-cols-2 md:grid-cols-4">
         {users.map((user) => (
           <div key={user.id} className="px-3 py-6">
             <WhatOurUserComp

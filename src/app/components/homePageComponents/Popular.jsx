@@ -67,7 +67,7 @@ const Popular = () => {
           Find experts for every need, at home or at work.
         </p>
       </div>
-      <div className="hidden sm:grid sm:grid-cols-2 px-3 py-3  gap-3 md:grid-cols-4">
+      <div data-aos="fade-right" className="hidden  sm:grid sm:grid-cols-2 px-3 py-3  gap-3 md:grid-cols-4">
         {items.map((item) => (
           <div key={item.id} className="mb-10  ">
             <Popularcomponents item={item} />
@@ -77,7 +77,7 @@ const Popular = () => {
 
       <div className="flex overflow-x-scroll gap-3 md:hidden px-3 py-3 ">
         {items.map((item) => (
-          <div key={item.id} className="mb-10 min-w-[300px] ">
+          <div  key={item.id} className="mb-10 min-w-[300px] ">
             <Popularcomponents item={item} />
           </div>
         ))}

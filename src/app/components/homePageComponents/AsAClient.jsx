@@ -33,7 +33,7 @@ const facts = [
 const AsAClient = () => {
   return (
     <div className="bg-gradient-to-r md:flex w-full justify-between from-[#003271]  to-[#FFFFFF]">
-      <div className={`${inter.className} md:w-1/2 md:block hidden  px-6 sm:px-12 md:px-18 py-5`}>
+      <div data-aos="fade-right" className={`${inter.className} md:w-1/2 md:block hidden  px-6 sm:px-12 md:px-18 py-5`}>
         {facts.map((fact) => (
           <div
             key={fact.id}
@@ -53,7 +53,7 @@ const AsAClient = () => {
         ))}
       </div>
       <div className={`md:mt-18 py-10 md:py-0 space-y-4 md:w-1/2 ${poppins.className}`}>
-        <h1 className="font-extrabold text-3xl px-10 md:px-16 text-[#003271]">
+        <h1 data-aos="fade-right" className="font-extrabold text-3xl px-10 md:px-16 text-[#003271]">
           <span className="text-[#FF6815]">One</span> Platform,{" "}
           <span className="text-[#FF6815]">Two</span> Paths, Hire or Get Hired
         </h1>

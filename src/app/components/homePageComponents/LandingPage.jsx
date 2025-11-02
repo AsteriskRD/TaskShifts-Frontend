@@ -63,7 +63,7 @@ const LandingPage = () => {
           ))}
         </div>
         <div className="absolute space-y-4 pb-16 z-0 inset-0 bg-black/50  flex text-center flex-col sm:px-10 px-5 md:px-50 justify-center items-center pt-26 ">
-          <h1 className=" md:px-20 px-10 font-bold text-white sm:text-2xl text-xl md:text-4xl text-center ">
+          <h1  className=" md:px-20 px-10 font-bold text-white sm:text-2xl text-xl md:text-4xl text-center ">
             Find Trusted{" "}
             <span className="text-[#FF6815]">Service Providers</span> for Your
             Home or Business
