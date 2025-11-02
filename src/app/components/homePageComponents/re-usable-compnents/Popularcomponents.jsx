@@ -15,9 +15,9 @@ const poppins = Poppins({
 
 const Popularcomponents = ({ item }) => {
   return (
-    <div className="">
+    <div className="w-74 mx-auto">
       <div>
-        <Image className="rounded-t-md" alt="img" src={item.img} />
+        <Image width={400}  className="rounded-t-2xl " alt="img" src={item.img} />
       </div>
       <div className="bg-white space-y-2 p-4">
         <h1 className={`${dm_sans.className} font-bold text-[20px]`}>

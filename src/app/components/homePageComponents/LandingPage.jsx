@@ -1,10 +1,10 @@
 import React from "react";
-import handshake from "../../images/delivery.png";
-import landingone from "../../images/landingone.png";
-import landingtwo from "../../images/landingtwo.png";
-import landingfour from "../../images/landingfour.png";
-import landingfive from "../../images/landingfive.png";
-import landinglast from "../../images/landinglast.png";
+// import handshake from "../../images/delivery.png";
+// import landingone from "../../images/landingone.png";
+// import landingtwo from "../../images/landingtwo.png";
+// import landingfour from "../../images/landingfour.png";
+// import landingfive from "../../images/landingfive.png";
+import landinglast from "../../images/landingpage.png";
 import Image from "next/image";
 import { Poppins } from "next/font/google";
 import { Inter } from "next/font/google";
@@ -20,48 +20,37 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const bgImages = [
-  {
-    id: 1,
-    img: landingone,
-  },
-  {
-    id: 2,
-    img: landingtwo,
-  },
-  {
-    id: 3,
-    img: handshake,
-  },
-  {
-    id: 4,
-    img: landingfour,
-  },
-  {
-    id: 5,
-    img: landingfive,
-  },
-  {
-    id: 6,
-    img: landinglast,
-  },
-];
+// const bgImages = [
+//   {
+//     id: 1,
+//     img: landingone,
+//   },
+//   {
+//     id: 2,
+//     img: landingtwo,
+//   },
+//   {
+//     id: 3,
+//     img: handshake,
+//   },
+//   {
+//     id: 4,
+//     img: landingfour,
+//   },
+//   {
+//     id: 5,
+//     img: landingfive,
+//   },
+//   {
+//     id: 6,
+//     img: landinglast,
+//   },
+// ];
 const LandingPage = () => {
   return (
-    <div className={`${poppins.className} z-0 relative pt-24 w-full`}>
+    <div className={`${poppins.className} z-0 max-w-7xl mx-auto relative pt-24 w-full`}>
       <section className="relative w-full h-[75vh] overflow-hidden">
-        <div className="grid md:grid-cols-6 sm:grid-cols-3 grid-cols-2 w-full">
-          {bgImages.map((img, index) => (
-            <div key={index} className="relative">
-              <Image
-                src={img.img}
-                alt="img"
-                width={400}
-                className="object-cover "
-              />
-            </div>
-          ))}
-        </div>
+       <Image width={400}  src={landinglast} alt="img" className="w-full h-full object-center"/>
         <div className="absolute space-y-4 pb-16 z-0 inset-0 bg-black/50  flex text-center flex-col sm:px-10 px-5 md:px-50 justify-center items-center pt-26 ">
           <h1  className=" md:px-20 px-10 font-bold text-white sm:text-2xl text-xl md:text-4xl text-center ">
             Find Trusted{" "}
@@ -69,7 +58,7 @@ const LandingPage = () => {
             Home or Business
           </h1>
           <p
-            className={`font-[400]  ${inter.className} text-center text-base md:text-base text-[#FFFFFF]`}
+            className={`font-light  ${inter.className} text-center text-base md:text-base text-[#FFFFFF]`}
           >
             Hire or get hired in one seamless platform built for clients and
             service providers

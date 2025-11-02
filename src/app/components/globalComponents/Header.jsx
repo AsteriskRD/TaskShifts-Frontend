@@ -25,9 +25,17 @@ const Header = () => {
   };
 
   const path = usePathname();
+
+
   return (
-    <div className={`w-full fixed top-0 bg-white left-0 z-50 ${inter.className}  px-6 sm:px-12 md:px-18 py-5 ${showMenu ? "overflow-hidden" : "overflow-visible"}`}>
-      <div className={`flex ${inter.className}  justify-between items-center`}>
+    <div
+      className={`w-full fixed top-0 bg-white left-0 z-50 ${
+        inter.className
+      }  px-6 sm:px-12 md:px-10 py-5 ${
+        showMenu ? "overflow-hidden" : "overflow-visible"
+      }`}
+    >
+      <div className={`flex ${inter.className}  w-full max-w-7xl mx-auto justify-between items-center`}>
         <div className="">
           <Link href="/">
             <Image src={logo} alt="logo" width={50} />
@@ -119,7 +127,9 @@ const Header = () => {
       </div>
 
       <div
-        className={` overflow-hidden w-full h-full  z-20  transition-all duration-1000  ${showMenu ? "max-h-screen " : "max-h-0"}  `}
+        className={` overflow-hidden w-full h-full  z-20  transition-all duration-1000  ${
+          showMenu ? "max-h-screen " : "max-h-0"
+        }  `}
       >
         <div className="flex flex-col pt-7 text-center justify-center space-y-7">
           <Link

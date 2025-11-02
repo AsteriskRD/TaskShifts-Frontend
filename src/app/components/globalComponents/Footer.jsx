@@ -108,8 +108,8 @@ const legals = [
 ];
 const Footer = () => {
   return (
-    <div>
-      <div className="md:hidden bg-[#24272A] px-6 sm:px-12 block py-6">
+    <div className="max-w-7xl mx-auto">
+      <div className="md:hidden  mx-auto w-full bg-[#24272A]  px-6 sm:px-12 block py-6">
         <Link href="/">
           <Image src={logo} alt="logo" width={50} />
         </Link>

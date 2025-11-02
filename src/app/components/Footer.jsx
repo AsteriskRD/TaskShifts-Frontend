@@ -13,7 +13,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-black text-white px-4 py-10 lg:pb-10 pb-50 relative">
+    <footer className="w-fullz bg-black text-white px-4 py-10 lg:pb-10 pb-50 relative">
       <div className="max-w-7xl mx-auto">
         {/* ---------- FIRST ROW ---------- */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 mb-10">
