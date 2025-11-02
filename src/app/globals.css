@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+
+
+
 @theme {
   --color-primary-50: #ccd6e3;
   --color-primary-100: #aabbd0;
@@ -41,6 +44,11 @@
   --color-success-50: #44BBA4;
   --color-warning-50: #FFB703;
   --color-danger-50: #D91E36;
+
+}
+.active{
+  color: var(--color-primary-500);
+  
 }
 
 @layer base {
