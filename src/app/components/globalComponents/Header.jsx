@@ -27,7 +27,7 @@ const Header = () => {
   const path = usePathname();
   return (
     <div className={`w-full fixed top-0 bg-white left-0 z-50 ${inter.className}  px-6 sm:px-12 md:px-18 py-5 ${showMenu ? "overflow-hidden" : "overflow-visible"}`}>
-      <div className="flex  justify-between items-center">
+      <div className={`flex ${inter.className}  justify-between items-center`}>
         <div className="">
           <Link href="/">
             <Image src={logo} alt="logo" width={50} />
@@ -35,7 +35,7 @@ const Header = () => {
         </div>
         <div className="md:flex hidden items-center gap-6">
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/") ? "active" : ""
             }`}
             href="/"
@@ -43,7 +43,7 @@ const Header = () => {
             Home
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/aboutus") ? "active" : ""
             }`}
             href="/aboutus"
@@ -51,7 +51,7 @@ const Header = () => {
             About Us
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/services") ? "active" : ""
             }`}
             href="/services"
@@ -59,7 +59,7 @@ const Header = () => {
             Sevices
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D] ${
               path.startsWith("/providers") ? "active" : ""
             }`}
             href="/providers"
@@ -67,7 +67,7 @@ const Header = () => {
             Providers
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/marketplace") ? "active" : ""
             }`}
             href="/marketplace"
@@ -75,7 +75,7 @@ const Header = () => {
             MarketPlace
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/contact") ? "active" : ""
             }`}
             href="/contact"
@@ -123,7 +123,7 @@ const Header = () => {
       >
         <div className="flex flex-col pt-7 text-center justify-center space-y-7">
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/") ? "active" : ""
             }`}
             href="/"
@@ -131,7 +131,7 @@ const Header = () => {
             Home
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/aboutus") ? "active" : ""
             }`}
             href="/aboutus"
@@ -139,7 +139,7 @@ const Header = () => {
             About Us
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/services") ? "active" : ""
             }`}
             href="/services"
@@ -147,7 +147,7 @@ const Header = () => {
             Sevices
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/providers") ? "active" : ""
             }`}
             href="/providers"
@@ -155,7 +155,7 @@ const Header = () => {
             Providers
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/marketplace") ? "active" : ""
             }`}
             href="/marketplace"
@@ -163,7 +163,7 @@ const Header = () => {
             MarketPlace
           </Link>
           <Link
-            className={`text-[var(--headerlight)]  ${
+            className={`text-[#6C757D]  ${
               path.startsWith("/contact") ? "active" : ""
             }`}
             href="/contact"

@@ -3,8 +3,8 @@ import clsx from 'clsx'
 
 const Button = ({variant, size, className, children, ...props}) => {
     const variantButton ={
-        primary: "bg-[var(--header)] rounded-full px-4 py-1.5 text-white",
-        secondary: "bg-white text-[var(--header)] rounded-full px-4 border border-[var(--header)] py-1.5",
+        primary: "bg-[#003271] rounded-full px-4 py-1.5 text-white",
+        secondary: "bg-white text-[#003271] rounded-full px-4 border border-[#003271] py-1.5",
 
     }
     const sizeButton = {

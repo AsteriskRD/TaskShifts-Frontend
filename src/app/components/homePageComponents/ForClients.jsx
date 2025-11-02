@@ -44,7 +44,7 @@ const cards = [
 ];
 const ForClients = () => {
   return (
-    <div className="px-6 sm:px-12  md:flex justify-between gap-20 md:px-18 py-14 bg-[var(--header)]">
+    <div className="px-6 sm:px-12 bg-[#003271] md:flex justify-between gap-20 md:px-18 py-14 ">
       <div className="md:flex hidden flex-col">
         <h1
           className={`font-extrabold text-white text-3xl ${poppins.className}`}
