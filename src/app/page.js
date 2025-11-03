@@ -1,4 +1,3 @@
-
 import LandingPage from "./components/homePageComponents/LandingPage";
 import AsAClient from "./components/homePageComponents/AsAClient";
 import ForClients from "./components/homePageComponents/ForClients";
@@ -7,13 +6,12 @@ import WhatUsersSay from "./components/homePageComponents/WhatUsersSay";
 
 export default function Home() {
     return (
-      <div>
-        <LandingPage/>
-        <AsAClient/>
-        <ForClients/>
-        <Popular/>
-        <WhatUsersSay/>
-
-      </div>
+        <div>
+            <LandingPage />
+            <AsAClient />
+            <ForClients />
+            <Popular />
+            <WhatUsersSay />
+        </div>
     );
 }
