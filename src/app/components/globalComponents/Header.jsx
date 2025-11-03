@@ -131,7 +131,7 @@ const Header = () => {
           showMenu ? "max-h-screen " : "max-h-0"
         }  `}
       >
-        <div className="flex flex-col pt-7 text-center justify-center space-y-7">
+        <div className="flex flex-col pt-30 text-center justify-center space-y-16">
           <Link
             className={`text-[#6C757D]  ${
               path.startsWith("/") ? "active" : ""
@@ -180,7 +180,7 @@ const Header = () => {
           >
             Contact
           </Link>
-          <div className="bg-[#A8A8B147] text-center mx-auto relative rounded-full w-30 px-2 py-1.5">
+          <div className="bg-[#A8A8B147] text-center mx-auto relative rounded-full w-30 px-2 py-1.5 mb-8">
             <input
               className="placeholder:pl-10 placeholder:text-[#484E53]"
               type="search"
