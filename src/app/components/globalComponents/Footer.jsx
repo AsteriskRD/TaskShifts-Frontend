@@ -114,7 +114,7 @@ const Footer = () => {
                     <Image src={logo} alt="logo" width={50} />
                 </Link>
             </div>
-            <div className="flex justify-between px-12 md:px-18 py-5 bg-[#24272A] gap-4">
+            <div className="flex justify-between max-w-7xl mx-auto px-6 md:px-0 py-5 bg-[#24272A] gap-4">
                 <div className="md:block hidden pt-3">
                     <Link href="/">
                         <Image src={logo} alt="logo" width={70} />
