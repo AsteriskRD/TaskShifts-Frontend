@@ -29,7 +29,7 @@ const Header = () => {
 
   return (
     <div
-      className={`w-full fixed top-0 bg-white left-0 z-50 ${
+      className={`w-full fixed top-0 bg-white z-50 ${
         inter.className
       }  px-6 sm:px-12 md:px-10 py-5 ${
         showMenu ? "overflow-hidden" : "overflow-visible"
@@ -127,11 +127,11 @@ const Header = () => {
       </div>
 
       <div
-        className={` overflow-hidden w-full h-full  z-20  transition-all duration-1000  ${
+        className={` overflow-hidden bg-white w-full  z-20  transition-all duration-1000  ${
           showMenu ? "max-h-screen " : "max-h-0"
         }  `}
       >
-        <div className="flex flex-col pt-30 text-center justify-center space-y-16">
+        <div className="flex flex-col h-screen text-center justify-center space-y-18">
           <Link
             className={`text-[#6C757D]  ${
               path.startsWith("/") ? "active" : ""
