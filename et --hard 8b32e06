@@ -1,0 +1,72 @@
+[33me8dc21c[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/aboutus-page[m[33m, [m[1;31morigin/feature/aboutus-page[m[33m)[m HEAD@{0}: reset: moving to e8dc21c
+[33m8b32e06[m HEAD@{1}: checkout: moving from feature/landing-page-update to feature/aboutus-page
+[33m0dd6b5a[m[33m ([m[1;31morigin/feature/landing-page-update[m[33m, [m[1;32mfeature/landing-page-update[m[33m)[m HEAD@{2}: commit: fix
+[33mb9a30e8[m HEAD@{3}: checkout: moving from feature/aboutus-page to feature/landing-page-update
+[33m8b32e06[m HEAD@{4}: reset: moving to 8b32e06
+[33me8dc21c[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/aboutus-page[m[33m, [m[1;31morigin/feature/aboutus-page[m[33m)[m HEAD@{5}: reset: moving to e8dc21c
+[33m8b32e06[m HEAD@{6}: reset: moving to 8b32e06
+[33m8b32e06[m HEAD@{7}: checkout: moving from feature/about-page to feature/aboutus-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{8}: checkout: moving from feature/about-page to feature/about-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{9}: checkout: moving from feature/landing-page-update to feature/about-page
+[33mb9a30e8[m HEAD@{10}: checkout: moving from main to feature/landing-page-update
+[33me20a466[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{11}: checkout: moving from feature/landing-page-update to main
+[33mb9a30e8[m HEAD@{12}: commit: fix
+[33m70d64cf[m HEAD@{13}: checkout: moving from feature/aboutus-page to feature/landing-page-update
+[33m8b32e06[m HEAD@{14}: commit: fix
+[33me8dc21c[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/aboutus-page[m[33m, [m[1;31morigin/feature/aboutus-page[m[33m)[m HEAD@{15}: checkout: moving from feature/landing-page-update to feature/aboutus-page
+[33m70d64cf[m HEAD@{16}: checkout: moving from feature/aboutus-page to feature/landing-page-update
+[33me8dc21c[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/aboutus-page[m[33m, [m[1;31morigin/feature/aboutus-page[m[33m)[m HEAD@{17}: commit: created about page
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{18}: checkout: moving from feature/landing-page-update to feature/aboutus-page
+[33m70d64cf[m HEAD@{19}: checkout: moving from feature/landing-page to feature/landing-page-update
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{20}: checkout: moving from feature/landing-page-update to feature/landing-page
+[33m70d64cf[m HEAD@{21}: checkout: moving from feature/aboutus-page to feature/landing-page-update
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{22}: checkout: moving from feature/landing-page-update to feature/aboutus-page
+[33m70d64cf[m HEAD@{23}: checkout: moving from feature/aboutus-page to feature/landing-page-update
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{24}: checkout: moving from feature/landing-page-update to feature/aboutus-page
+[33m70d64cf[m HEAD@{25}: checkout: moving from main to feature/landing-page-update
+[33me20a466[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{26}: checkout: moving from feature/landing-page-update to main
+[33m70d64cf[m HEAD@{27}: commit: updated responsiveness
+[33mcacf456[m HEAD@{28}: commit: improved responsiveness
+[33me20a466[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{29}: checkout: moving from feature/aboutus-page to feature/landing-page-update
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{30}: checkout: moving from feature/landing-page-update to feature/aboutus-page
+[33me20a466[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{31}: checkout: moving from main to feature/landing-page-update
+[33me20a466[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{32}: pull origin main: Fast-forward
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{33}: checkout: moving from feature/landing-page to main
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{34}: checkout: moving from feature/aboutus-page to feature/landing-page
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{35}: checkout: moving from feature/landing-page to feature/aboutus-page
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{36}: checkout: moving from feature/aboutus-page to feature/landing-page
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{37}: checkout: moving from feature/landing-page to feature/aboutus-page
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{38}: checkout: moving from feature/landing-page to feature/landing-page
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{39}: checkout: moving from f27ecb1eefa2e5b259070ea9c85c0da0f069429b to feature/landing-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{40}: checkout: moving from feature/about-page to feature/about-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{41}: checkout: moving from main to feature/about-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{42}: checkout: moving from feature/landing-page to main
+[33md5ae4ed[m[33m ([m[1;31morigin/feature/landing-page[m[33m, [m[1;32mfeature/landing-page[m[33m)[m HEAD@{43}: commit: aos inclusion
+[33md478c60[m HEAD@{44}: commit: initial landing page commit
+[33mda9d805[m HEAD@{45}: rebase (continue) (finish): returning to refs/heads/feature/landing-page
+[33mda9d805[m HEAD@{46}: rebase (continue) (pick): initial commit
+[33m2a6ee4e[m HEAD@{47}: rebase (continue): feat: complete client landing section
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{48}: pull origin main --rebase (start): checkout f27ecb1eefa2e5b259070ea9c85c0da0f069429b
+[33m90c0223[m HEAD@{49}: checkout: moving from feature/about-page to feature/landing-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{50}: checkout: moving from main to feature/about-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{51}: reset: moving to origin/main
+[33m71d8850[m[33m ([m[1;31morigin/authentication/signup[m[33m)[m HEAD@{52}: checkout: moving from feature/landing-page to main
+[33m90c0223[m HEAD@{53}: checkout: moving from main to feature/landing-page
+[33m71d8850[m[33m ([m[1;31morigin/authentication/signup[m[33m)[m HEAD@{54}: reset: moving to 71d8850
+[33m71d8850[m[33m ([m[1;31morigin/authentication/signup[m[33m)[m HEAD@{55}: reset: moving to 71d8850
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{56}: checkout: moving from feature/aboutpage to main
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{57}: checkout: moving from feature/landing-page to feature/aboutpage
+[33m90c0223[m HEAD@{58}: checkout: moving from feature/aboutpage to feature/landing-page
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{59}: checkout: moving from main to feature/aboutpage
+[33mf27ecb1[m[33m ([m[1;32mfeature/aboutpage[m[33m, [m[1;32mfeature/about-page[m[33m)[m HEAD@{60}: pull origin main: Fast-forward
+[33mdbed15d[m HEAD@{61}: checkout: moving from feature/landing-page to main
+[33m90c0223[m HEAD@{62}: commit: initial commit
+[33m09470ce[m HEAD@{63}: reset: moving to HEAD
+[33m09470ce[m HEAD@{64}: reset: moving to HEAD
+[33m09470ce[m HEAD@{65}: reset: moving to HEAD
+[33m09470ce[m HEAD@{66}: reset: moving to HEAD
+[33m09470ce[m HEAD@{67}: commit: feat: complete client landing section
+[33mdbed15d[m HEAD@{68}: checkout: moving from main to feature/landing-page
+[33mdbed15d[m HEAD@{69}: checkout: moving from feature/landing-page to main
+[33mdbed15d[m HEAD@{70}: checkout: moving from main to feature/landing-page
+[33mdbed15d[m HEAD@{71}: clone: from https://github.com/AsteriskRD/TaskShifts-Frontend.git
