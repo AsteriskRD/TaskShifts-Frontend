@@ -32,7 +32,7 @@ const facts = [
 ];
 const AsAClient = () => {
   return (
-    <div className="bg-gradient-to-r md:flex w-full justify-between from-[#003271]  to-[#FFFFFF]">
+    <div className="bg-gradient-to-r max-w-7xl mx-auto md:flex w-full justify-between from-[#003271]  to-[#FFFFFF]">
       <div data-aos="fade-right" className={`${inter.className} md:w-1/2 md:block hidden  px-6 sm:px-12 md:px-18 py-5`}>
         {facts.map((fact) => (
           <div

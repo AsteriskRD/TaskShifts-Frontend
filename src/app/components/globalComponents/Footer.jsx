@@ -108,145 +108,161 @@ const legals = [
 ];
 const Footer = () => {
   return (
-    <div>
-      <div className="md:hidden bg-[#24272A] px-6 sm:px-12 block py-6">
+    <div className="max-w-7xl mx-auto">
+      <div className="md:hidden  mx-auto w-full bg-[#24272A]  px-6 sm:px-12 block py-6">
         <Link href="/">
           <Image src={logo} alt="logo" width={50} />
         </Link>
       </div>
       <div className="flex justify-between px-12 md:px-18 py-5 bg-[#24272A] gap-4">
-        <div className="md:block hidden">
+        <div className="md:block hidden pt-3">
           <Link href="/">
-            <Image src={logo} alt="logo" width={50} />
+            <Image src={logo} alt="logo" width={70} />
           </Link>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-10 md:grid-cols-4 text-white md:gap-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-12 md:grid-cols-4 text-white md:gap-12">
           <div>
             <h1
-              className={`${poppins.className} underline py-3 font-bold text-lg pb-4`}
+              className={`${poppins.className} underline py-3 font-bold text-base pb-4`}
             >
               Quick Link
             </h1>
             <div className="space-y-3">
               {links.map((link) => (
                 <div key={link.id}>
-                  <Link href={link.link}>{link.name}</Link>
+                  <Link className="text-[13.5px]" href={link.link}>
+                    {link.name}
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
           <div>
             <h1
-              className={`${poppins.className} underline py-3 font-bold text-lg pb-4`}
+              className={`${poppins.className} underline py-3 font-bold text-base pb-4`}
             >
               Contact
             </h1>
             <div className="space-y-3">
               {contacts.map((link) => (
                 <div key={link.id}>
-                  <Link href={link.link}>{link.name}</Link>
+                  <Link className="text-[13.5px]" href={link.link}>
+                    {link.name}
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
           <div>
             <h1
-              className={`${poppins.className} underline py-3 font-bold text-lg pb-4`}
+              className={`${poppins.className} underline py-3 text-base font-bold pb-4`}
             >
               For Users
             </h1>
             <div className="space-y-3">
               {users.map((link) => (
                 <div key={link.id}>
-                  <Link href={link.link}>{link.name}</Link>
+                  <Link className="text-[13.5px]" href={link.link}>
+                    {link.name}
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
           <div>
             <h1
-              className={`${poppins.className} underline py-3 font-bold text-lg pb-4`}
+              className={`${poppins.className} underline py-3 font-bold text-base pb-4`}
             >
               Legal
             </h1>
             <div className="space-y-3">
               {legals.map((link) => (
                 <div key={link.id}>
-                  <Link href={link.link}>{link.name}</Link>
+                  <Link className="text-[13.5px]" href={link.link}>
+                    {link.name}
+                  </Link>
                 </div>
               ))}
             </div>
           </div>
           <div className="space-y-2 sm:block hidden md:hidden py-4">
-          <h1 className={`${dm_sans.className} text-white font-bold`}>
-            Want to keep hearing from us?
-          </h1>
-          <div className="space-y-3">
-            <input
-              className="placeholder:pl-4 bg-white placeholder:text-black rounded-l-md p-2"
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Enter your email"
-            />
-            <button className="bg-[#F1A008] rounded-r-md px-4 py-2 text-white font-bold">
-              Subscribe
-            </button>
+            <h1
+              className={`${dm_sans.className} text-white text-base font-bold`}
+            >
+              Want to keep hearing from us?
+            </h1>
+            <div className="space-y-3">
+              <input
+                className="placeholder:pl-4 bg-white placeholder:text-black rounded-l-md p-2"
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+              />
+              <button className="bg-[#E48D1A] rounded-r-md px-4 py-2 text-white font-bold">
+                Send
+              </button>
+            </div>
           </div>
         </div>
-        </div>
         <div className="space-y-2 md:block hidden py-4">
-          <h1 className={`${dm_sans.className} text-white font-bold`}>
+          <h1 className={`${dm_sans.className} text-white text-base font-bold`}>
             Want to keep hearing from us?
           </h1>
           <div>
             <input
-              className="placeholder:pl-4 bg-white placeholder:text-black rounded-l-md p-2"
+              className="placeholder:pl-4 bg-white placeholder:text-black rounded-l-full p-2"
               type="email"
               name="email"
               id="email"
               placeholder="Enter your email"
             />
-            <button className="bg-[#F1A008] rounded-r-md px-4 py-2 text-white font-bold">
-              Subscribe
+            <button className="bg-[#E48D1A] rounded-r-full px-4 py-2 text-white font-bold">
+              Send
             </button>
           </div>
         </div>
       </div>
 
       <div
-        className={`${poppins.className} text-white space-y-4 sm:space-y-0 sm:flex justify-between md:px-40 sm:px-10 px-10 py-6 bg-[#003271]`}
+        className={`${poppins.className} text-white space-y-4 bg-[#24272A] sm:space-y-0 sm:flex justify-between md:px-40 sm:px-10 px-10 py-6 `}
       >
         <div className="space-y-2 block sm:hidden py-4">
           <h1 className={`${dm_sans.className} text-white font-bold`}>
             Want to keep hearing from us?
           </h1>
-          <div className="space-y-3">
+          <div className="py-3 flex">
             <input
-              className="placeholder:pl-4 bg-white placeholder:text-black rounded-l-md p-2"
+              className="placeholder:pl-4 bg-[#eaeaef] border border-[#D8D8DD] placeholder:text-[#b1b1b6] rounded-l-full p-2"
               type="email"
               name="email"
               id="email"
               placeholder="Enter your email"
             />
-            <button className="bg-[#F1A008] rounded-r-md px-4 py-2 text-white font-bold">
-              Subscribe
+            <button className="bg-[#E48D1A] rounded-r-full p-2  text-white font-bold">
+              Send
             </button>
           </div>
-        </div>
-        <div className="flex justify-center py-4 md:py-0   gap-4">
-          <FaFacebookSquare size={25} className="mx-2" />
-          <FaInstagram size={25} className="mx-2" />
-          <FaXTwitter size={25} className="mx-2" />
-          <FaLinkedin size={25} className="mx-2" />
-        </div>
-        <div className={`flex text-xs sm:text-sm gap-5 md:gap-10`}>
-          <p>@ 2025 TaskShift Technologies</p>
-          <p>All right reserved</p>
-          <p>map</p>
-          <p>cookies policy</p>
-        </div>
+        </div> 
       </div>
+      <div className="bg-[#003271] text-white py-6 justify-center md:flex">
+          <div className="flex justify-center py-4 md:py-0   gap-4">
+            <FaFacebookSquare size={20} className="mx-2" />
+            <FaInstagram size={20} className="mx-2" />
+            <FaXTwitter size={20} className="mx-2" />
+            <FaLinkedin size={20} className="mx-2" />
+          </div>
+          <div
+            className={`flex ${poppins.className} text-xs px-4 sm:text-sm gap-5 md:gap-10`}
+          >
+            <p className="font-[400px] text-[14px]">
+              @ 2025 TaskShift Technologies
+            </p>
+            <p>All right reserved</p>
+            <p>map</p>
+            <p>cookies policy</p>
+          </div>
+        </div>
     </div>
   );
 };
