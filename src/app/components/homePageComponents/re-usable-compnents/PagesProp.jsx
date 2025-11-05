@@ -9,11 +9,11 @@ const dm_sans = DM_Sans({
 
 const PagesProp = ({ img, title }) => {
   return (
-    <div className={`${dm_sans.className} `}>
-      <div className="relative w-full bg-black/65 h-[55vh] sm:h-[85vh] overflow-hidden">
+    <div className={`${dm_sans.className} relative`}>
+      <div className="relative w-full  h-[55vh] sm:h-[85vh] overflow-hidden">
         <Image fill className="object-cover" src={img} alt={title} priority />
       </div>
-      <div className="text-white items-center bg-black/65 mx-6 sm:mx-12 md:mx-18 absolute inset-0 flex flex-col justify-center">
+      <div className="text-white items-center bg-black/65  absolute inset-0 flex flex-col justify-center">
         <h1 className=" font-bold text-3xl md:text-4xl lg:text-5xl text-center my-6">
           {title}
         </h1>
