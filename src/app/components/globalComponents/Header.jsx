@@ -26,6 +26,10 @@ const Header = () => {
 
   const path = usePathname();
 
+  const hideNavBar = () => {
+    setShowMenu(false);
+  }
+
 
   return (
     <div
@@ -126,7 +130,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div
+      <div onClick={hideNavBar}
         className={` overflow-hidden bg-white w-full  z-20  transition-all duration-1000  ${
           showMenu ? "max-h-screen " : "max-h-0"
         }  `}
