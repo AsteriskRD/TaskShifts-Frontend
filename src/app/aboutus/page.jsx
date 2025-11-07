@@ -27,7 +27,7 @@ const AboutUs = ({ title, img }) => {
       className={`${poppins.className} pt-22 pb-10 px-6 sm:px-12 md:px-18 max-w-[1440px] mx-auto `}
     >
       <div>
-        <PagesProp img={about} title="About Us" />
+        <PagesProp img={about} title="ABOUT US" />
         <div className="space-y-7">
           <p className="font-[400px] pt-10 text-base">
             At TaskShift, we are redefining how people find, hire, and grow
