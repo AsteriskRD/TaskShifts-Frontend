@@ -26,7 +26,7 @@ const AboutUsss = ({ title, img }) => {
     <div
       className={`${poppins.className} bg-[] pt-22 pb-10 px-6 sm:px-12 md:px-18 max-w-[1440px] mx-auto `}
     >
-      <div className=" px-8 ">
+      <div className=" ">
         <PagesProp img={devs} title="CONTACT US" />
         <div className="md:flex w-full min-w-96 text-left gap-60 justify-items-start py-8">
           <div className="md:w-1/2">
