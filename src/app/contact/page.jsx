@@ -21,7 +21,7 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-const AboutUsss = ({ title, img }) => {
+const Contact = ({ title, img }) => {
   return (
     <div
       className={`${poppins.className} bg-[] pt-22 pb-10 px-6 sm:px-12 md:px-18 max-w-[1440px] mx-auto `}
@@ -127,4 +127,4 @@ const AboutUsss = ({ title, img }) => {
   );
 };
 
-export default AboutUsss;
+export default Contact;
