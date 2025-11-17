@@ -8,6 +8,7 @@ import Button from "./Button";
 import { Inter } from "next/font/google";
 import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 // import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -18,6 +19,7 @@ const inter = Inter({
 });
 
 const Header = () => {
+  const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
 
   const showMenuHandler = () => {
@@ -29,6 +31,12 @@ const Header = () => {
   const hideNavBar = () => {
     setShowMenu(false);
   }
+
+
+  const onClickRole = () => {
+    router.push("/chooserole");
+  }
+
 
 
   return (
@@ -109,7 +117,7 @@ const Header = () => {
           </div>
         </div>
         <div className="md:flex hidden gap-2">
-          <Button variant="primary" size="sm">
+          <Button onClick={onClickRole} variant="primary" size="sm">
             Get Started
           </Button>
           <Button variant="secondary" size="sm">
