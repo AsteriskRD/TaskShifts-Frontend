@@ -8,6 +8,7 @@ import Button from "./Button";
 import { Inter } from "next/font/google";
 import { CiSearch } from "react-icons/ci";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 // import { GiHamburgerMenu } from "react-icons/gi";
 import { FaTimes } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
@@ -18,6 +19,7 @@ const inter = Inter({
 });
 
 const Header = () => {
+  const router = useRouter();
   const [showMenu, setShowMenu] = useState(false);
 
   const showMenuHandler = () => {
@@ -25,6 +27,16 @@ const Header = () => {
   };
 
   const path = usePathname();
+
+  const hideNavBar = () => {
+    setShowMenu(false);
+  }
+
+
+  const onClickRole = () => {
+    router.push("/chooserole");
+  }
+
 
 
   return (
@@ -35,7 +47,7 @@ const Header = () => {
         showMenu ? "overflow-hidden" : "overflow-visible"
       }`}
     >
-      <div className={`flex ${inter.className}  w-full max-w-7xl mx-auto justify-between items-center`}>
+      <div className={`flex ${inter.className}  bg-white w-full max-w-7xl mx-auto justify-between items-center`}>
         <div className="">
           <Link href="/">
             <Image src={logo} alt="logo" width={50} />
@@ -90,7 +102,7 @@ const Header = () => {
           >
             Contact
           </Link>
-          <div className="bg-[#A8A8B147] relative rounded-full w-30 px-2 py-1.5">
+          <div className="bg-[#A8A8B147] relative rounded-full w-60 px-2 py-1.5">
             <input
               className="placeholder:pl-10 placeholder:text-[#484E53]"
               type="search"
@@ -105,7 +117,7 @@ const Header = () => {
           </div>
         </div>
         <div className="md:flex hidden gap-2">
-          <Button variant="primary" size="sm">
+          <Button onClick={onClickRole} variant="primary" size="sm">
             Get Started
           </Button>
           <Button variant="secondary" size="sm">
@@ -126,7 +138,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div
+      <div onClick={hideNavBar}
         className={` overflow-hidden bg-white w-full  z-20  transition-all duration-1000  ${
           showMenu ? "max-h-screen " : "max-h-0"
         }  `}
