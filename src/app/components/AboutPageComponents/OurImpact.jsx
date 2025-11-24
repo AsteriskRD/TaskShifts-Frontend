@@ -44,7 +44,7 @@ const OurImpact = () => {
           </div>
         ))}
       </div>
-      <div data-aos="flip-left" className="md:hidden overflow-x-scroll flex py-10">
+      <div data-aos="flip-left" className="md:hidden overflow-x-scroll gap-10 flex py-10">
         {impacts.map((impact) => (
           <div
             className="bg-white min-w-80 shadow-2xl flex h-38 flex-col text-left space-y-6 py-6 px-4 rounded-2xl"
