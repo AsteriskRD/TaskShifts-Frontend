@@ -56,7 +56,7 @@ const poppins = Poppins({
 
 const Popular = () => {
   return (
-    <div className={` bg-gradient-to-r max-w-7xl mx-auto from-[#FFFFFF] to-[#FFE1D0]  md:py-14 py-8 `}>
+    <div className={` px-6 sm:px-12 md:px-10 md:py-14 py-8 `}>
       <div className="text-center space-y-2 py-2">
         <h1
           className={`${poppins.className}  text-3xl font-extrabold text-[#003271]`}
@@ -67,7 +67,7 @@ const Popular = () => {
           Find experts for every need, at home or at work.
         </p>
       </div>
-      <div data-aos="fade-right" className="hidden md:grid md:grid-cols-3 px-3 py-3  gap-3 lg:grid-cols-4">
+      <div data-aos="fade-right" className="hidden md:grid md:grid-cols-3 px-3 py-10  gap-3 lg:grid-cols-4">
         {items.map((item) => (
           <div key={item.id} className="mb-10  ">
             <Popularcomponents item={item} />

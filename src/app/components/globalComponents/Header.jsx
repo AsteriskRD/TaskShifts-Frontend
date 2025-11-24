@@ -47,7 +47,7 @@ const Header = () => {
         showMenu ? "overflow-hidden" : "overflow-visible"
       }`}
     >
-      <div className={`flex ${inter.className}  w-full max-w-7xl mx-auto justify-between items-center`}>
+      <div className={`flex ${inter.className}  bg-white w-full max-w-7xl mx-auto justify-between items-center`}>
         <div className="">
           <Link href="/">
             <Image src={logo} alt="logo" width={50} />
@@ -102,7 +102,7 @@ const Header = () => {
           >
             Contact
           </Link>
-          <div className="bg-[#A8A8B147] relative rounded-full w-30 px-2 py-1.5">
+          <div className="bg-[#A8A8B147] relative rounded-full w-60 px-2 py-1.5">
             <input
               className="placeholder:pl-10 placeholder:text-[#484E53]"
               type="search"
