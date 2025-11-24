@@ -14,12 +14,12 @@ const poppins = Poppins({
 
 const LandingPageCard = ({num, head, text}) => {
   return (
-    <div className='flex  items-center gap-6 '>
-        <div className='bg-[#003271] text-center  text-white font-bold rounded-full pt-1 w-8 aspect-square'>
+    <div className='flex border border-[#003271] px-12 rounded-md p-4 items-center gap-6 '>
+        <div className='bg-[#003271] text-center text-sm  text-white font-bold rounded-full w-9 aspect-square pt-1'>
             {num}
         </div>
         <div>
-            <h1 className={`${poppins.className} text-[#003271] text-lg font-extrabold `}>{head}</h1>
+            <h1 className={`${poppins.className} text-[#060D23] text-lg font-extrabold `}>{head}</h1>
             <h1 className={`${inter.className} text-[#64748B] text-sm`}>{text}</h1>
         </div>
       
