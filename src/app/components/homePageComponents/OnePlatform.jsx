@@ -117,6 +117,7 @@ const OnePlatform = () => {
                       head={card.intro}
                       text={card.desc}
                     />
+                    
                   </div>
                 ))}
               </div>
