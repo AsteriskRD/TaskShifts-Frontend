@@ -52,8 +52,8 @@ const LandingPage = () => {
       className={`${poppins.className} px-6 sm:px-12 md:px-10  bg-[#E7EAF3] relative pt-21 w-full`}
     >
       <section className="sm:flex block justify-between items-center w-full">
-        <div className="w-1/2 space-y-4 flex flex-col  justify-center items-center  ">
-          <h1 className="pt-10 sm:pt-0 font-bold text-[#000000] sm:text-2xl text-xl md:text-5xl ">
+        <div className="md:w-1/2 space-y-4 flex flex-col  justify-center items-center  ">
+          <h1 className="md:pt-10 pt-14 sm:pt-0 font-bold text-[#000000] sm:text-2xl text-xl md:text-5xl ">
             Find Trusted{" "}
             <span className="text-[#FF6815]">Service Providers</span> Near You
           </h1>
@@ -64,7 +64,7 @@ const LandingPage = () => {
             needs. Hire or get hired in one seamless platform
           </p>
 
-          <div className="flex py-6 gap-4">
+          <div className="flex md:py-6 py-10 gap-4">
             <Button
               className="cursor-pointer md:text-base text-xs"
               variant="secondary"

@@ -50,7 +50,7 @@ const users = [
 
 const WhatUsersSay = () => {
   return (
-    <div className={` bg-[#002A5E] max-w-7xl mx-auto px-6 sm:px-12 md:px-18 py-10`}>
+    <div className={` bg-[#002A5E] px-6 sm:px-12 md:px-18 py-10`}>
       <div className="text-center">
         <h1
           className={`${poppins.className} text-bgcolor-50 text-3xl font-bold text-center py-6 bg-[#002A5E]`}

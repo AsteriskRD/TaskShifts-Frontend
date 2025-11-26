@@ -40,7 +40,7 @@ const infos = [
 
 const How = () => {
   return (
-    <div className=" px-6 sm:px-12  max-w-[1440px] mx-auto py-10 md:px-40">
+    <div className=" px-6 sm:px-12 py-10 md:px-40">
       <div>
         <h1 data-aos="zoom-out-up"
           className={`${poppins.className} text -black text-center text-3xl font-bold`}
