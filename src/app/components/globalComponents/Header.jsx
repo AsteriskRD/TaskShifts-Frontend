@@ -47,7 +47,7 @@ const Header = () => {
         showMenu ? "overflow-hidden" : "overflow-visible"
       }`}
     >
-      <div className={`flex ${inter.className}  bg-white w-full max-w-7xl mx-auto justify-between items-center`}>
+      <div className={`flex ${inter.className}  bg-white w-full max-w-[1440px] mx-auto justify-between items-center`}>
         <div className="">
           <Link href="/">
             <Image src={logo} alt="logo" width={50} />
