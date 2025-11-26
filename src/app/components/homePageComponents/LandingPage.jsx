@@ -2,7 +2,7 @@ import React from "react";
 // import handshake from "../../images/delivery.png";
 // import landingone from "../../images/landingone.png";
 // import landingtwo from "../../images/landingtwo.png";
-// import landingfour from "../../images/landingfour.png";
+import landingfour from "../../images/plumber.png";
 // import landingfive from "../../images/landingfive.png";
 import landinglast from "../../images/landingpage.png";
 import Image from "next/image";
@@ -48,32 +48,53 @@ const inter = Inter({
 // ];
 const LandingPage = () => {
   return (
-    <div className={`${poppins.className} z-0 max-w-7xl mx-auto relative pt-24 w-full`}>
-      <section className="relative w-full min-h-[90vh] sm:h-[50vh] overflow-hidden">
-       <Image fill src={landinglast} alt="img" className="w-full h-full object-cover object-top" priority/>
-        <div className="absolute space-y-4 pb-16 z-0 inset-0 bg-black/50  flex text-center flex-col sm:px-10 px-5 md:px-50 justify-center items-center pt-26 ">
-          <h1  className=" md:px-20 sm:px-10 px-5 font-bold text-white sm:text-2xl text-xl md:text-4xl text-center ">
+    <div
+      className={`${poppins.className} px-6 sm:px-12 md:px-10  bg-[#E7EAF3] relative pt-21 w-full`}
+    >
+      <section className="sm:flex block justify-between items-center w-full">
+        <div className="md:w-1/2 space-y-4 flex flex-col  justify-center items-center  ">
+          <h1 className="md:pt-10 pt-14 sm:pt-0 font-bold text-[#000000] sm:text-2xl text-xl md:text-5xl ">
             Find Trusted{" "}
-            <span className="text-[#FF6815]">Service Providers</span> for Your
-            Home or Business
+            <span className="text-[#FF6815]">Service Providers</span> Near You
           </h1>
           <p
-            className={`font-light  ${inter.className} text-center text-base md:text-base text-[#FFFFFF]`}
+            className={`font-light  ${inter.className} text-base text-[#000000]`}
           >
-            Hire or get hired in one seamless platform built for clients and
-            service providers
+            Taskshift connects you with verified professionals for your everyday
+            needs. Hire or get hired in one seamless platform
           </p>
 
-          <div className="flex space-y-4  gap-2 md:gap-4">
-            <Button className="cursor-pointer md:text-base text-xs" variant="secondary" size="lg">
-              Find a Service
+          <div className="flex md:py-6 py-10 gap-4">
+            <Button
+              className="cursor-pointer md:text-base text-xs"
+              variant="secondary"
+              size="lg"
+            >
+              Get Started
             </Button>
-            <Button className="cursor-pointer md:text-base text-xs" variant="primary" size="lg">
+            <Button
+              className="cursor-pointer md:text-base text-xs"
+              variant="primary"
+              size="lg"
+            >
               Become a Provider
             </Button>
           </div>
         </div>
+
+        <div className=" pt-6 z-0 relative ">
+          <Image
+            className="md:w-96 w-72 h-full object-contain object-center"
+            src={landingfour}
+            alt="landing"
+            width={500}
+            height={500}
+            priority
+          />
+          <div className="bg-[#FFE1D0] md:w-[400px]  h-[140px] md:h-[180px] w-[300px] rounded-t-4xl absolute bottom-0 left-0 z-[-1]"></div>
+        </div>
       </section>
+      <div></div>
     </div>
   );
 };
