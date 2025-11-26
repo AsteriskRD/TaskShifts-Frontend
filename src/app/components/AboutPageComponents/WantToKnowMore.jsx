@@ -13,7 +13,7 @@ const poppins = Poppins({
 const WantToKnowMore = () => {
   return (
     <div
-      className={`${poppins.className}  py-10 px-4 md:px-10 `}
+      className={`${poppins.className}  py-10 px-8 sm:px-12 md:px-10 `}
     >
       <div className="md:flex justify-between w-full items-center md:gap-45">
         <div className="w-full">
