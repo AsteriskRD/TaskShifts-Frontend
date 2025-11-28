@@ -1,5 +1,5 @@
-import React from 'react'
-import Services from './Services'
+import React from "react";
+import Services from "./Services";
 import p_one from "../../images/portraitone.png";
 import p_two from "../../images/portraitwo.png";
 import p_three from "../../images/portraithree.png";
@@ -26,135 +26,131 @@ import tutor from "../../images/tutor.png";
 
 import { CiStar } from "react-icons/ci";
 
-const services =[
-    {
-        id:1,
-        img: p_three,
-        name: "Promise Justice",
-        title: "Plumber",
-     
-        status: "Available",
-        image: plumbingone,
-        service: "QuickFix Plumbing Co" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-     {
-        id:2,
-        img: p_four,
-        name: "Chika Kosi",
-        title: "Plumber",
-        status: "Unvailable",
-        image: makeup,
-        service: "Charvi’s Makeover" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-    {
-        id:3,
-        img: p_five,
-        name: "Timi Stephen",
-        title: "Plumber",
-      
-        status: "Available",
-        image: plumbingone,
-        service: "Sparkle & Shine Cleaner" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-     {
-        id:4,
-        img: p_six,
-        name: "Timi Stephen",
-        title: "Plumber",
-     
-        status: "Available",
-        image: cleaner,
-        service: "Sparkle & Shine Cleaner" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-     {
-        id:5,
-        img: p_seven,
-        name: "Promise Justice",
-        title: "Plumber",
-     
-        status: "Available",
-        image: repairs,
-        service: "QuickFix Plumbing Co" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-     {
-        id:6,
-        img: p_eight,
-        name: "Chika Kosi",
-        title: "plumbing",
-        status: "Unvailable",
-        image: makeup,
-        service: "Charvi’s Makeover" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-    {
-        id:7,
-        img: p_nine,
-        name: "Timi Stephen",
-        title: "salon",
-      
-        status: "Available",
-        image: plumbingone,
-        service: "Sparkle & Shine Cleaner" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-     {
-        id:8,
-        img: p_ten,
-        name: "Timi Stephen",
-        title: "tutor",
-     
-        status: "Available",
-        image: cleaner,
-        service: "Sparkle & Shine Cleaner" ,
-        location: "Main island, Lagos",
-        rating: "3.5",
-        reviews: "52",
-        time: "5.00",
-    },
-    
-    
+const services = [
+  {
+    id: 1,
+    img: p_three,
+    name: "Promise Justice",
+    title: "Plumber",
 
-]
+    status: "Available",
+    image: plumbingone,
+    service: "QuickFix Plumbing Co",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+  {
+    id: 2,
+    img: p_four,
+    name: "Chika Kosi",
+    title: "Plumber",
+    status: "Unvailable",
+    image: makeup,
+    service: "Charvi’s Makeover",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+  {
+    id: 3,
+    img: p_five,
+    name: "Timi Stephen",
+    title: "Plumber",
+
+    status: "Available",
+    image: plumbingone,
+    service: "Sparkle & Shine Cleaner",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+  {
+    id: 4,
+    img: p_six,
+    name: "Timi Stephen",
+    title: "Plumber",
+
+    status: "Available",
+    image: cleaner,
+    service: "Sparkle & Shine Cleaner",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+  {
+    id: 5,
+    img: p_seven,
+    name: "Promise Justice",
+    title: "Plumber",
+
+    status: "Available",
+    image: repairs,
+    service: "QuickFix Plumbing Co",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+  {
+    id: 6,
+    img: p_eight,
+    name: "Chika Kosi",
+    title: "plumbing",
+    status: "Unvailable",
+    image: makeup,
+    service: "Charvi’s Makeover",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+  {
+    id: 7,
+    img: p_nine,
+    name: "Timi Stephen",
+    title: "salon",
+
+    status: "Available",
+    image: plumbingone,
+    service: "Sparkle & Shine Cleaner",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+  {
+    id: 8,
+    img: p_ten,
+    name: "Timi Stephen",
+    title: "tutor",
+
+    status: "Available",
+    image: cleaner,
+    service: "Sparkle & Shine Cleaner",
+    location: "Main island, Lagos",
+    rating: "3.5",
+    reviews: "52",
+    time: "5.00",
+  },
+];
 
 const ServiceParent = () => {
   return (
-    <div className='grid px-8 grid-cols-4 space-y-4 gap-4 '>
-        {
-            services.map((service) =>(
-                <div key={service.id}>
-                    <Services  name={service.name} title={service.title} icon={service.icon} status={service.status} image={service.image} img={service.img} time={service.time} service={service.service} location={service.location} rating={service.rating} reviews={service.reviews}   />
-                </div>
-            ))
-        }
-      
+    <div
+      className="grid  px-3 sm:px-6 md:px-10 w-full
+  grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4
+  gap-4 sm:gap-6 md:gap-8"
+    >
+      {services.map((service) => (
+        <Services key={service.id} {...service} />
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default ServiceParent
+export default ServiceParent;

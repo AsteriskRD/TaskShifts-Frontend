@@ -6,7 +6,7 @@ import ServiceParent from '../components/ServiceComps/ServiceParent'
 
 const Services = () => {
   return (
-    <div className='bg-[#e2e2e947] py-8'>
+    <div className='bg-[#e2e2e947] max-w-[1440px] mx-auto py-8'>
         <FindtTrusted/>
         <Filter/>
         <ServiceParent/>

@@ -18,7 +18,7 @@ const FindtTrusted = () => {
     >
       <div className="bg-[#003271] text-white space-y-2">
         <div className="p-8">
-          <h1 className={` ${dm_sans.className}  text-2xl font-bold `}>
+          <h1 className={` ${dm_sans.className} sm:text-xl text-lg md:text-2xl font-bold `}>
             Find Trusted Service Providers Near You
           </h1>
           <p className={` ${poppins.className} text-xs md:text-sm font-extralight`}>
