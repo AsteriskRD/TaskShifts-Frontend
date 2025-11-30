@@ -52,9 +52,6 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <form action="" className="w-12">
-            <input type="search" name="" id="" className="w-full" />
-          </form>
         </nav>
       </div>
 
