@@ -13,7 +13,7 @@ import { usePathname } from "next/navigation";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const HideHeaderFooter = pathname.startsWith("provider");
+  const HideHeaderFooter = pathname.startsWith("/providers");
 
 
   useEffect(() => {

@@ -8,7 +8,7 @@ import { MdOutlinePortrait } from "react-icons/md";
 
 const DashboardHeader = () => {
   return (
-    <div className="flex items-center gap-10 ">
+    <div className="flex items-center gap-8">
       <div>
         <div className="flex relative items-center gap-2">
           <input
@@ -48,11 +48,11 @@ const DashboardHeader = () => {
           2
         </div>
       </div>
-      <div className="border-x- border-y-12 border-[#77797D] border-2"></div>
+      <div className="border-x border-y-18 border-[#77797D] border-2"></div>
       <div className="flex items-center gap-10">
         <div>
-          <h1>
-            Hello, <span>Mercy Smith</span>
+          <h1 className="text-sm text-[#464255] font-medium">
+            Hello, <span className="font-bold">Mercy S</span>
           </h1>
         </div>
         <div className="bg-[#003271] rounded-full w-12 flex flex-col pl-2.5 justify-center aspect-square text-center">
