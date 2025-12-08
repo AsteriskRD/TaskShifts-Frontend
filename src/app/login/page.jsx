@@ -6,58 +6,33 @@ import * as yup from "yup";
 import { useRouter } from "next/navigation";
 import { useState, useEffect } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-
-const schema = yup.object().shape({
-  email: yup.string().email("Invalid email").required("Email is required"),
-  password: yup.string().required("Password is required"),
-});
+import Link from "next/link";
 
 export default function LoginPage() {
-  const router = useRouter();
-  const [message, setMessage] = useState("");
-  const [showPassword, setShowPassword] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
+  const [loginDetails, setLoginDetails] = useState({
+    email: "",
+    password: "",
+    rememberMe: false,
   });
 
-  useEffect(() => {
-    const rememberedEmail = localStorage.getItem("rememberedEmail");
-    if (rememberedEmail) setValue("email", rememberedEmail);
-  }, [setValue]);
-
-  const onSubmit = (data) => {
-    const users = JSON.parse(localStorage.getItem("users") || "[]");
-    const user = users.find(
-      (u) => u.email === data.email && u.password === data.password
-    );
-
-    if (data.rememberMe) {
-      localStorage.setItem("rememberedEmail", data.email);
-    } else {
-      localStorage.removeItem("rememberedEmail");
-    }
-
-    if (user) {
-      localStorage.setItem("activeUser", JSON.stringify(user));
-      setMessage("Login successful! Redirecting...");
-
-      setTimeout(() => {
-        if (user.role === "client") router.push("/landing/client");
-        else router.push("/landing/provider");
-      }, 1500);
-    } else {
-      setMessage("Invalid email or password");
-    }
+  const onChangeHandler = (e) => {
+    const { name, value, checked, type } = e.target;
+    setLoginDetails((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+    console.log(loginDetails);
   };
+  const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+ 
+  const onSubmitHandler = (e) => {
+    e.preventDefault();
+    router.push("/providers")
+  }
 
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-accent-50 px-4 lg:px-20">
+    <main className="flex pt-40 pb-20 flex-col items-center justify-center min-h-screen bg-accent-50 px-4 lg:px-20">
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
         <h2 className="text-2xl font-bold text-center mb-6">
           Welcome back to <span className="text-secondary-500">TaskShift</span>
@@ -66,25 +41,22 @@ export default function LoginPage() {
           Provide your credentials to access your account
         </p>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form onSubmit={onSubmitHandler} className="space-y-4">
           {/* Email Field */}
           <div>
             <label className="block mb-1 font-medium">Email</label>
-            <input
+            <input name="email" value={loginDetails.email} onChange={onChangeHandler}
               type="email"
-              {...register("email")}
               className="w-full p-2 border rounded"
               placeholder="example@email.com"
             />
-            <p className="text-red-500 text-sm">{errors.email?.message}</p>
           </div>
 
           {/* Password Field */}
           <div className="relative">
             <label className="block mb-1 font-medium">Password</label>
-            <input
+            <input name="password" value={loginDetails.password} onChange={onChangeHandler}
               type={showPassword ? "text" : "password"}
-              {...register("password")}
               className="w-full p-2 border rounded pr-10"
               placeholder="Enter password"
             />
@@ -94,13 +66,11 @@ export default function LoginPage() {
             >
               {showPassword ? <FaEyeSlash /> : <FaEye />}
             </span>
-            <p className="text-red-500 text-sm">{errors.password?.message}</p>
           </div>
 
-          {/* Remember Me & Forgot Password */}
           <div className="flex justify-between items-center">
             <label className="flex items-center gap-2 text-sm">
-              <input type="checkbox" {...register("rememberMe")} />
+              <input type="checkbox" name="rememberMe" checked={loginDetails.rememberMe} onChange={onChangeHandler} />
               Remember Me
             </label>
 
@@ -123,15 +93,8 @@ export default function LoginPage() {
 
         {/* Sign Up Link */}
         <p className="text-center mt-4 text-gray-600">
-          Don’t have an account?{" "}
-          <a href="/signup" className="text-blue-600 hover:underline">
-            Sign Up
-          </a>
+          Don’t have an account? <Link href="/chooserole">Sign Up</Link>
         </p>
-
-        {message && (
-          <p className="text-center mt-4 text-danger-50">{message}</p>
-        )}
       </div>
     </main>
   );

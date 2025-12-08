@@ -8,12 +8,13 @@ import Header from "./components/globalComponents/Header";
 import Footer from "./components/globalComponents/Footer";
 import Aos from "aos";
 import { usePathname } from "next/navigation";
+import { ToastContainer } from "react-toastify";
 
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const HideHeaderFooter = pathname.startsWith("provider");
+  const HideHeaderFooter = pathname.startsWith("/providers");
 
 
   useEffect(() => {
@@ -22,6 +23,7 @@ export default function RootLayout({ children }) {
   return (
     <html className="" lang="en">
       <body className="">
+        <ToastContainer />
         <Context>
             {!HideHeaderFooter && <Header />}
             {children}
