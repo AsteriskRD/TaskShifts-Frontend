@@ -30,14 +30,11 @@ const Header = () => {
 
   const hideNavBar = () => {
     setShowMenu(false);
-  }
-
+  };
 
   const onClickRole = () => {
-    router.push("/chooserole");
-  }
-
-
+    router.push("/login");
+  };
 
   return (
     <div
@@ -47,88 +44,77 @@ const Header = () => {
         showMenu ? "overflow-hidden" : "overflow-visible"
       }`}
     >
-      <div className={`flex ${inter.className}  bg-white w-full max-w-[1440px] mx-auto justify-between items-center`}>
-        <div className="">
-          <Link href="/">
-            <Image src={logo} alt="logo" width={50} />
-          </Link>
-        </div>
-        <div className="md:flex hidden items-center gap-6">
-          <Link
-            className={`text-[#6C757D]  ${
-              path.startsWith("/") ? "active" : ""
-            }`}
-            href="/"
-          >
-            Home
-          </Link>
-          <Link
-            className={`text-[#6C757D]  ${
-              path.startsWith("/aboutus") ? "active" : ""
-            }`}
-            href="/aboutus"
-          >
-            About Us
-          </Link>
-          <Link
-            className={`text-[#6C757D]  ${
-              path.startsWith("/services") ? "active" : ""
-            }`}
-            href="/services"
-          >
-            Sevices
-          </Link>
-          <Link
-            className={`text-[#6C757D] ${
-              path.startsWith("/providers") ? "active" : ""
-            }`}
-            href="/providers"
-          >
-            Providers
-          </Link>
-          <Link
-            className={`text-[#6C757D]  ${
-              path.startsWith("/marketplace") ? "active" : ""
-            }`}
-            href="/marketplace"
-          >
-            MarketPlace
-          </Link>
-          <Link
-            className={`text-[#6C757D]  ${
-              path.startsWith("/contact") ? "active" : ""
-            }`}
-            href="/contact"
-          >
-            Contact
-          </Link>
-          <div className="bg-[#A8A8B147] relative rounded-full w-60 px-2 py-1.5">
-            <input
-              className="placeholder:pl-10 placeholder:text-[#484E53]"
-              type="search"
-              name="search"
-              id="search"
-              placeholder="search"
-            />
-            <CiSearch
-              size={20}
-              className="text-[#484E53] absolute left-2 top-2 text-2xl"
-            />
+      <div
+        className={`flex ${inter.className}  bg-white w-full max-w-[1440px] mx-auto justify-between items-center`}
+      >
+        <div className="flex gap-30 items-center gap-10">
+          <div className="">
+            <Link href="/">
+              <Image src={logo} alt="logo" width={50} />
+            </Link>
+          </div>
+          <div className="md:flex hidden items-center gap-10">
+            <Link
+              className={`text-[#6C757D]  ${
+                path.startsWith("/") ? "active" : ""
+              }`}
+              href="/"
+            >
+              Home
+            </Link>
+            <Link
+              className={`text-[#6C757D]  ${
+                path.startsWith("/aboutus") ? "active" : ""
+              }`}
+              href="/aboutus"
+            >
+              About Us
+            </Link>
+            <Link
+              className={`text-[#6C757D]  ${
+                path.startsWith("/services") ? "active" : ""
+              }`}
+              href="/services"
+            >
+              Services
+            </Link>
+            <Link
+              className={`text-[#6C757D] ${
+                path.startsWith("/providers") ? "active" : ""
+              }`}
+              href="/providers"
+            >
+              Providers
+            </Link>
+            <Link
+              className={`text-[#6C757D]  ${
+                path.startsWith("/marketplace") ? "active" : ""
+              }`}
+              href="/marketplace"
+            >
+              MarketPlace
+            </Link>
+            <Link
+              className={`text-[#6C757D]  ${
+                path.startsWith("/contact") ? "active" : ""
+              }`}
+              href="/contact"
+            >
+              Contact
+            </Link>
           </div>
         </div>
-        <div className="md:flex hidden gap-2">
+
+        <div className="md:flex  hidden gap-2">
           <Button onClick={onClickRole} variant="primary" size="sm">
-            Get Started
-          </Button>
-          <Button variant="secondary" size="sm">
-            Login
+            Sign In
           </Button>
         </div>
 
         {/* for smaller screens */}
         <div className="md:hidden flex gap-10 items-center">
-          <Button variant="primary" size="sm">
-            Get Started
+          <Button onClick={() => { onClickRole(); hideNavBar(); }} variant="primary" size="sm">
+            Sign In
           </Button>
           <div onClick={showMenuHandler}>
             <div>
@@ -138,7 +124,8 @@ const Header = () => {
         </div>
       </div>
 
-      <div onClick={hideNavBar}
+      <div
+        onClick={hideNavBar}
         className={` overflow-hidden bg-white w-full  z-20  transition-all duration-1000  ${
           showMenu ? "max-h-screen " : "max-h-0"
         }  `}
@@ -192,19 +179,7 @@ const Header = () => {
           >
             Contact
           </Link>
-          <div className="bg-[#A8A8B147] text-center mx-auto relative rounded-full w-30 px-2 py-1.5 mb-8">
-            <input
-              className="placeholder:pl-10 placeholder:text-[#484E53]"
-              type="search"
-              name="search"
-              id="search"
-              placeholder="search"
-            />
-            <CiSearch
-              size={20}
-              className="text-[#484E53] absolute left-2 top-2 text-2xl"
-            />
-          </div>
+         
         </div>
       </div>
     </div>
