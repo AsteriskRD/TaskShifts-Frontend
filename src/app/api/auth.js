@@ -2,7 +2,7 @@ import httpClient from "./axiosInstance";
 
 export const register = async(data) => {
   try {
-    const response = await httpClient.post("/api/users/register", data);
+    const response = await httpClient.post("users/register", data);
     return response;
   } catch (error) {
     throw new Error(error.response?.data?.message || "An error occurred during registration");

@@ -55,7 +55,7 @@ export default function ChooseRolePage() {
           {/* Client button */}
           <button
             onClick={() => handleRoleSelect("client")}
-            className={`relative p-4 rounded-md transition border-2 md:w-auto w-full flex md:flex-col md:justify-center justify-start items-center gap-2 ${
+            className={`relative p-4 rounded-md transition cursor-pointer border-2 md:w-auto w-full flex md:flex-col md:justify-center justify-start items-center gap-2 ${
               selectedRole === "client"
                 ? "border-primary-600 shadow-lg"
                 : "border-gray-200"
@@ -86,7 +86,7 @@ export default function ChooseRolePage() {
           {/* Provider button */}
           <button
             onClick={() => handleRoleSelect("provider")}
-            className={`relative p-4 rounded-md transition border-2 md:w-auto w-full flex md:flex-col md:justify-center justify-start items-center gap-2 ${
+            className={`relative p-4 rounded-md cursor-pointer transition border-2 md:w-auto w-full flex md:flex-col md:justify-center justify-start items-center gap-2 ${
               selectedRole === "provider"
                 ? "border-primary-600 shadow-lg"
                 : "border-gray-200"

@@ -1,4 +1,10 @@
 "use client";
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -32,9 +38,9 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="flex pt-40 pb-20 flex-col items-center justify-center min-h-screen bg-accent-50 px-4 lg:px-20">
+    <main className={`${poppins.className} flex pt-40 pb-20 flex-col items-center justify-center min-h-screen bg-accent-50 px-4 lg:px-20`}>
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
-        <h2 className="text-2xl font-bold text-center mb-6">
+        <h2 className="text-2xl text-[#484E53] font-bold text-center mb-6">
           Welcome back to <span className="text-secondary-500">TaskShift</span>
         </h2>
         <p className="text-accent-100 text-center mb-6">
@@ -68,7 +74,7 @@ export default function LoginPage() {
             </span>
           </div>
 
-          <div className="flex justify-between items-center">
+          <div className="flex  justify-between items-center">
             <label className="flex items-center gap-2 text-sm">
               <input type="checkbox" name="rememberMe" checked={loginDetails.rememberMe} onChange={onChangeHandler} />
               Remember Me
@@ -76,7 +82,7 @@ export default function LoginPage() {
 
             <a
               href="/forgot-password"
-              className="text-sm text-blue-600 hover:underline"
+              className="text-sm text-black hover:underline"
             >
               Forgot Password?
             </a>
@@ -85,15 +91,21 @@ export default function LoginPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            className="w-full bg-[#003271] text-white py-2 rounded-xl hover:bg-[#002050]"
           >
             Login
+          </button>
+          <button
+            type="submit"
+            className="w-full border-[2px] border-[#003271] text-[#003271] py-2 rounded-xl"
+          >
+            Continue with Google
           </button>
         </form>
 
         {/* Sign Up Link */}
-        <p className="text-center mt-4 text-gray-600">
-          Don’t have an account? <Link href="/chooserole">Sign Up</Link>
+        <p className="text-center mt-4">
+          Don’t have an account? <Link className="text-[#FF6815] hover-underline" href="/chooserole">Sign Up</Link>
         </p>
       </div>
     </main>
