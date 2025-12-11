@@ -32,7 +32,7 @@ const LandingPage = () => {
     >
       <section className="sm:flex block justify-between items-center w-full">
         <div className="md:w-1/2 space-y-4 flex flex-col  justify-center  ">
-          <h1 className="md:pt-10 pt-14 sm:pt-0 font-bold text-[#000000] sm:text-2xl text-xl md:text-5xl ">
+          <h1 className="md:pt-10 pt-14 font-bold text-[#000000] sm:text-2xl text-xl md:text-5xl ">
             Find Trusted{" "}
             <span className="text-[#FF6815]">Service Providers</span> Near You
           </h1>
@@ -68,7 +68,7 @@ const LandingPage = () => {
 
         <div className=" pt-6 z-0 relative overflow-hidden ">
           <Image
-            className="md:w-96 w-72 h-full object-contain object-center"
+            className="w-full object-contain object-center"
             src={landingfour}
             alt="landing"
             width={500}

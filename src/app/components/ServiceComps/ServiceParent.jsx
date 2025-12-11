@@ -32,14 +32,14 @@ const services = [
     img: p_three,
     name: "Promise Justice",
     title: "Plumber",
-
     status: "Available",
     image: plumbingone,
     service: "QuickFix Plumbing Co",
     location: "Main island, Lagos",
     rating: "3.5",
     reviews: "52",
-    time: "5.00",
+    price: "N5,000",
+   
   },
   {
     id: 2,
@@ -53,6 +53,7 @@ const services = [
     rating: "3.5",
     reviews: "52",
     time: "5.00",
+    price: "N5,000",
   },
   {
     id: 3,
@@ -67,6 +68,7 @@ const services = [
     rating: "3.5",
     reviews: "52",
     time: "5.00",
+    price: "N5,000",
   },
   {
     id: 4,
@@ -81,6 +83,7 @@ const services = [
     rating: "3.5",
     reviews: "52",
     time: "5.00",
+    price: "N5,000",
   },
   {
     id: 5,
@@ -95,6 +98,7 @@ const services = [
     rating: "3.5",
     reviews: "52",
     time: "5.00",
+    price: "N5,000",
   },
   {
     id: 6,
@@ -108,6 +112,7 @@ const services = [
     rating: "3.5",
     reviews: "52",
     time: "5.00",
+    price: "N5,000",
   },
   {
     id: 7,
@@ -122,6 +127,7 @@ const services = [
     rating: "3.5",
     reviews: "52",
     time: "5.00",
+    price: "N5,000",
   },
   {
     id: 8,
@@ -136,6 +142,7 @@ const services = [
     rating: "3.5",
     reviews: "52",
     time: "5.00",
+    price: "N5,000",
   },
 ];
 
@@ -147,7 +154,7 @@ const ServiceParent = () => {
   gap-4 sm:gap-6 md:gap-8"
     >
       {services.map((service) => (
-        <Services key={service.id} {...service} />
+        <Services key={service.id} name = {service.name} image={service.image} service={service.service} location={service.location} rating={service.rating} reviews={service.reviews} price={service.price}  />
       ))}
     </div>
   );
