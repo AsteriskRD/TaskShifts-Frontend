@@ -73,6 +73,10 @@ export default function ProviderSignup() {
       toast.error("Enter a valid email.");
       return setLoading(false);
     }
+    if(!providerDetails){
+      toast.error("All fields are required.");
+      return setLoading(false);
+    }
 
     // PASSWORD VALIDATION
     if (providerDetails.password !== providerDetails.confirmPassword) {
@@ -97,7 +101,7 @@ export default function ProviderSignup() {
       return setLoading(false);
     }
 
-    // FINAL PAYLOAD — CLEAN & CORRECT
+    
     const payload = {
       userType: "provider",
       email: providerDetails.email,
@@ -109,9 +113,9 @@ export default function ProviderSignup() {
       availability: providerDetails.availability,
 
       location: {
-        country: providerDetails.country, // STRING (CA)
-        state: providerDetails.state, // STRING (BC)
-        city: providerDetails.city, // STRING
+        country: providerDetails.country,
+        state: providerDetails.state,
+        city: providerDetails.city,
         postalCode: providerDetails.postalCode,
         address: providerDetails.address,
       },
@@ -123,6 +127,7 @@ export default function ProviderSignup() {
         website: providerDetails.website,
         serviceDescription: providerDetails.serviceDescription,
       },
+        redirectUrl: `${window.location.origin}/success-verify`,
     };
 
     console.log(" Payload sent:", payload);

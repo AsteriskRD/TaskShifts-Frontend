@@ -2,19 +2,39 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { forgotPassword } from "../api/auth";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 export default function ForgotPassword() {
-  const [showPassword, setShowPassword] = useState(false);
-  const router = useRouter();
-  // const [email, setEmail] = useState('');
+ 
+  // const router = useRouter();
+  const [email, setEmail] = useState("");
   // const [message, setMessage] = useState('');
   // const [isLoading, setIsLoading] = useState(false);
   // const router = useRouter();
 
-  const onSubmitHandler = (e) => {
+
+  const onChangeHandler = (e) => {
+    setEmail(e.target.value);
+    console.log(email)
+  }
+
+  const onSubmitHandler = async(e) => {
     e.preventDefault();
-    router.push("/reset-password");
+    try {
+      const response = await forgotPassword({ email });
+      console.log(response);
+      if(response.status === 200){
+        toast.success("Link has been sent to your email");
+      }
+
+      
+    } catch (error) {
+      console.log(error);
+      
+    }
+
+    // router.push("/reset-password");
   }
 
   return (
@@ -30,19 +50,15 @@ export default function ForgotPassword() {
         </div>
         <form onSubmit={onSubmitHandler} className="mt-8 space-y-6">
           <div className="relative">
-            <label className="block mb-1 font-medium">Password</label>
-            <input
-              name="password"
-              type={showPassword ? "text" : "password"}
+            <label className="block mb-1 font-medium">Email</label>
+            <input onChange={onChangeHandler}
+              name="email"
+              type="email"
+              value = {email}
               className="w-full p-2 border rounded pr-10"
-              placeholder="Enter password"
+              placeholder="Enter Your Email"
             />
-            <span
-              onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-2 top-10 cursor-pointer text-gray-500"
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
+
           </div>
 
           <div>

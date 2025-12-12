@@ -1,18 +1,18 @@
 "use client";
 import { Poppins } from "next/font/google";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import Link from "next/link";
+import { login } from "../api/auth";
+import { toast } from "react-toastify";
+import { getProfile } from "../api/auth";
+import Loading from "../Loading";
 
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
-
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
-import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import Link from "next/link";
 
 export default function LoginPage() {
   const [loginDetails, setLoginDetails] = useState({
@@ -20,6 +20,11 @@ export default function LoginPage() {
     password: "",
     rememberMe: false,
   });
+
+  const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const router = useRouter();
 
   const onChangeHandler = (e) => {
     const { name, value, checked, type } = e.target;
@@ -29,16 +34,52 @@ export default function LoginPage() {
     }));
     console.log(loginDetails);
   };
-  const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
- 
-  const onSubmitHandler = (e) => {
+
+  loading && <Loading />;
+
+  const onSubmitHandler = async (e) => {
     e.preventDefault();
-    router.push("/providers")
-  }
+    setLoading(true);
+    if (!loginDetails.email || !loginDetails.password) {
+      toast.error("All fields are required.");
+      return;
+    }
+    try {
+      setLoading(true);
+      const response = await login(loginDetails);
+      console.log(response);
+
+      if (!response) {
+        toast.error("Invalid credentials.");
+        setLoading(false);
+        return;
+      }
+      if (response.status === 200 || response.status === 201) {
+        const { access, refresh } = response.data;
+        if (rememberMe) {
+          localStorage.setItem("access", access);
+          localStorage.setItem("refresh", refresh);
+        } else {
+          sessionStorage.setItem("access", access);
+          sessionStorage.setItem("refresh", refresh);
+        }
+
+        const profile = await getProfile(access);
+        if (profile.userType === "provider") {
+          router.push("/providers");
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
-    <main className={`${poppins.className} flex pt-40 pb-20 flex-col items-center justify-center min-h-screen bg-accent-50 px-4 lg:px-20`}>
+    <main
+      className={`${poppins.className} flex pt-40 pb-20 flex-col items-center justify-center min-h-screen bg-accent-50 px-4 lg:px-20`}
+    >
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
         <h2 className="text-2xl text-[#484E53] font-bold text-center mb-6">
           Welcome back to <span className="text-secondary-500">TaskShift</span>
@@ -51,7 +92,10 @@ export default function LoginPage() {
           {/* Email Field */}
           <div>
             <label className="block mb-1 font-medium">Email</label>
-            <input name="email" value={loginDetails.email} onChange={onChangeHandler}
+            <input
+              name="email"
+              value={loginDetails.email}
+              onChange={onChangeHandler}
               type="email"
               className="w-full p-2 border rounded"
               placeholder="example@email.com"
@@ -61,7 +105,10 @@ export default function LoginPage() {
           {/* Password Field */}
           <div className="relative">
             <label className="block mb-1 font-medium">Password</label>
-            <input name="password" value={loginDetails.password} onChange={onChangeHandler}
+            <input
+              name="password"
+              value={loginDetails.password}
+              onChange={onChangeHandler}
               type={showPassword ? "text" : "password"}
               className="w-full p-2 border rounded pr-10"
               placeholder="Enter password"
@@ -76,7 +123,13 @@ export default function LoginPage() {
 
           <div className="flex  justify-between items-center">
             <label className="flex items-center gap-2 text-sm">
-              <input type="checkbox" name="rememberMe" checked={loginDetails.rememberMe} onChange={onChangeHandler} />
+              <input
+                type="checkbox"
+                name="rememberMe"
+                id="rememberMe"
+                value={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+              />
               Remember Me
             </label>
 
@@ -91,7 +144,7 @@ export default function LoginPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-[#003271] text-white py-2 rounded-xl hover:bg-[#002050]"
+            className="w-full cursor-pointer bg-[#003271] text-white py-2 rounded-xl hover:bg-[#002050]"
           >
             Login
           </button>
@@ -105,7 +158,10 @@ export default function LoginPage() {
 
         {/* Sign Up Link */}
         <p className="text-center mt-4">
-          Don’t have an account? <Link className="text-[#FF6815] hover-underline" href="/chooserole">Sign Up</Link>
+          Don’t have an account?{" "}
+          <Link className="text-[#FF6815] hover-underline" href="/chooserole">
+            Sign Up
+          </Link>
         </p>
       </div>
     </main>
