@@ -89,7 +89,7 @@ export default function ProviderSignup() {
       return setLoading(false);
     }
 
-    // PHONE VALIDATION
+    // PHONE VALIDATION....
     if (providerDetails.phone.length < 10) {
       toast.error("Phone number must be at least 10 digits.");
       return setLoading(false);
