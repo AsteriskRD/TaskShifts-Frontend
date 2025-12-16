@@ -11,9 +11,9 @@ const poppins = Poppins({
 
 const VerifySuccess = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-accent-50">
-         <div className=" bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center gap-6">
-           <h1 className={`${poppins.className} font-bold md:text-xl text-lg`}>
+    <div className="flex flex-col items-center pt-20 justify-center min-h-screen bg-accent-50">
+         <div className=" bg-white p-20 rounded-2xl max-w-2xl shadow-lg flex flex-col items-center text-center gap-6">
+           <h1 className={`${poppins.className} font-bold md:text-lg text-base`}>
                 Email Verified Successfully!
            </h1>
            <div className="bg-[#156A15]  flex flex-col justify-center pl-2 rounded-full w-12 aspect-square">
