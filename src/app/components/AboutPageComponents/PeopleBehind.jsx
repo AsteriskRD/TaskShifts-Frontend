@@ -29,11 +29,11 @@ const PeopleBehind = () => {
       <h1 className="font-bold text-2xl text-center py-12">The People Behind <span className="text-[#FF6815]">Taskshift</span></h1>
       <div className="grid md:grid-cols-4 sm:grid-cols-3 grid-cols-2  gap-8">
         {persons.map((person) => (
-          <div key={person.id} person={person}>
+          <div className="flex flex-col justify-center items-center" key={person.id} person={person}>
             <div className="bg-[#2B5489] text-white  text-bold pt-14 text-center rounded-full w-32 aspect-square">
                 FA
             </div>
-            <div className="flex flex-col  pl-10 py-3">
+            <div className="flex flex-col py-3">
                 <h1 className="font-semibold">{person.name}</h1>
             <p className="text-[#AF9A9A]">{person.role}</p>
             </div>

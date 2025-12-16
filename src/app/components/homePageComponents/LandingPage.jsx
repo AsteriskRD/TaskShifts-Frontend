@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 // import handshake from "../../images/delivery.png";
 // import landingone from "../../images/landingone.png";
@@ -6,9 +7,11 @@ import landingfour from "../../images/plumber.png";
 // import landingfive from "../../images/landingfive.png";
 import landinglast from "../../images/landingpage.png";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import { Poppins } from "next/font/google";
 import { Inter } from "next/font/google";
 import Button from "../globalComponents/Button";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -20,40 +23,16 @@ const inter = Inter({
   weight: ["400", "500", "600", "700"],
 });
 
-// const bgImages = [
-//   {
-//     id: 1,
-//     img: landingone,
-//   },
-//   {
-//     id: 2,
-//     img: landingtwo,
-//   },
-//   {
-//     id: 3,
-//     img: handshake,
-//   },
-//   {
-//     id: 4,
-//     img: landingfour,
-//   },
-//   {
-//     id: 5,
-//     img: landingfive,
-//   },
-//   {
-//     id: 6,
-//     img: landinglast,
-//   },
-// ];
+
 const LandingPage = () => {
+  const router = useRouter();
   return (
     <div
       className={`${poppins.className} px-6 sm:px-12 md:px-10  bg-[#E7EAF3] relative pt-21 w-full`}
     >
       <section className="sm:flex block justify-between items-center w-full">
-        <div className="md:w-1/2 space-y-4 flex flex-col  justify-center items-center  ">
-          <h1 className="md:pt-10 pt-14 sm:pt-0 font-bold text-[#000000] sm:text-2xl text-xl md:text-5xl ">
+        <div className="md:w-1/2 space-y-4 flex flex-col  justify-center  ">
+          <h1 className="md:pt-10 pt-14 font-bold text-[#000000] sm:text-2xl text-xl md:text-5xl ">
             Find Trusted{" "}
             <span className="text-[#FF6815]">Service Providers</span> Near You
           </h1>
@@ -64,8 +43,12 @@ const LandingPage = () => {
             needs. Hire or get hired in one seamless platform
           </p>
 
-          <div className="flex md:py-6 py-10 gap-4">
+          <div>
+            <div className="flex md:py-6 py-10 gap-4">
             <Button
+              onClick={() => {
+                router.push("/chooserole");
+              }}
               className="cursor-pointer md:text-base text-xs"
               variant="secondary"
               size="lg"
@@ -80,11 +63,12 @@ const LandingPage = () => {
               Become a Provider
             </Button>
           </div>
+          </div>
         </div>
 
-        <div className=" pt-6 z-0 relative ">
+        <div className=" pt-6 z-0 relative overflow-hidden ">
           <Image
-            className="md:w-96 w-72 h-full object-contain object-center"
+            className="w-full object-contain object-center"
             src={landingfour}
             alt="landing"
             width={500}

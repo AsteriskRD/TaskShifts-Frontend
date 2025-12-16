@@ -13,8 +13,8 @@ export default function Home() {
     return (
       <div className="max-w-[1440px] mx-auto">
         <LandingPage/>
-        {/* <How/> */}
-        {/* <Why/> */}
+        <How/>
+        <Why/>
         <OnePlatform/>
         <ServiceProvider/>
         <Popular/>
