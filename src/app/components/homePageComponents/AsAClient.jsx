@@ -66,7 +66,7 @@ const AsAClient = () => {
           <p className="">
             Whether you need a reliable professional for home or business, or
             you are a provider looking to grow , TaskShift brings you together
-            safely
+            safely.
           </p>
         </div>
       </div>
