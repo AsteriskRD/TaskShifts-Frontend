@@ -33,14 +33,17 @@ export const login = async (data) => {
   }
 };
 
-export const verifyEmail = (data) =>
-  httpClient.post("/api/users/verify-email", data).catch((error) => {
+export const verifyEmailLink = async ({email, verificationCode}) => {
+  try {
+    const verifyResponse = await httpClient.post("/users/verify-email", {email, verificationCode});
+    return verifyResponse.data;
+  } catch (error) {
     throw new Error(
       error.response?.data?.message ||
-        "An error occurred during email verification"
+        "An error occurred during email verification, Please retry!"
     );
-  });
-
+  }
+};
 export const resendVerification = (email) =>
   httpClient
     .post("/api/users/resend-verification", { email })

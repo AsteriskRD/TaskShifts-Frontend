@@ -35,38 +35,42 @@ export default function LoginPage() {
     console.log(loginDetails);
   };
 
-  loading && <Loading />;
-
   const onSubmitHandler = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     if (!loginDetails.email || !loginDetails.password) {
       toast.error("All fields are required.");
+      setLoading(false);
       return;
     }
+
     try {
-      setLoading(true);
       const response = await login(loginDetails);
+      toast.success("Login successful.");
       console.log(response);
+      const { accessToken } = response.data;
 
       if (!response) {
         toast.error("Invalid credentials.");
         setLoading(false);
         return;
       }
+
       if (response.status === 200 || response.status === 201) {
-        const { access, refresh } = response.data;
         if (rememberMe) {
-          localStorage.setItem("access", access);
-          localStorage.setItem("refresh", refresh);
+          localStorage.setItem("accessToken", accessToken);
         } else {
-          sessionStorage.setItem("access", access);
-          sessionStorage.setItem("refresh", refresh);
+          sessionStorage.setItem("accessToken", accessToken);
         }
 
-        const profile = await getProfile(access);
+        const getProfileData = await getProfile(accessToken);
+        const profile = getProfileData.data.user
+        localStorage.setItem("userType", profile.userType);
+        localStorage.setItem("email", profile.email);
         if (profile.userType === "provider") {
-          router.push("/providers");
+          router.replace("/providers");
+          return;
         }
       }
     } catch (error) {
@@ -75,11 +79,12 @@ export default function LoginPage() {
       setLoading(false);
     }
   };
-
+if(loading) return <Loading />
   return (
     <main
       className={`${poppins.className} flex pt-40 pb-20 flex-col items-center justify-center min-h-screen bg-accent-50 px-4 lg:px-20`}
     >
+      
       <div className="w-full max-w-md bg-white p-8 rounded-xl shadow-md">
         <h2 className="text-2xl text-[#484E53] font-bold text-center mb-6">
           Welcome back to <span className="text-secondary-500">TaskShift</span>

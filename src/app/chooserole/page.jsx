@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { Profiler, useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
@@ -24,7 +24,7 @@ export default function ChooseRolePage() {
 
   const handleRoleSelect = (role) => {
     setSelectedRole(role);
-    localStorage.setItem("activeUser", JSON.stringify({ role }));
+    localStorage.setItem("activeUser", role );
   };
 
   const handleContinue = () => {
