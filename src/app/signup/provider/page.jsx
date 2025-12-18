@@ -8,6 +8,7 @@ import countryList from "react-select-country-list";
 import { toast } from "react-toastify";
 import { register } from "@/app/api/auth";
 import { Poppins } from "next/font/google";
+import Loading from "@/app/Loading";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -51,7 +52,6 @@ export default function ProviderSignup() {
   useEffect(() => setMounted(true), []);
   if (!mounted) return null;
 
-  // Generic form input handler
   const onChangeHandler = (e) => {
     const { name, value, checked, type } = e.target;
     setProviderDetails((prev) => ({
@@ -127,7 +127,7 @@ export default function ProviderSignup() {
         website: providerDetails.website,
         serviceDescription: providerDetails.serviceDescription,
       },
-        redirectUrl: `${window.location.origin}/success-verify`,
+        redirectUrl: `${window.location.origin}/link-verify-email`,
     };
 
     console.log(" Payload sent:", payload);
@@ -144,12 +144,14 @@ export default function ProviderSignup() {
         router.push("/verify-email");
       }
     } catch (error) {
-      toast.error(error?.message || "Something went wrong. Try again.");
+      toast.error(error?.message || "All fields are required");
       console.log("❌ Error:", error);
     } finally {
       setLoading(false);
     }
   };
+  
+  if(loading) return <Loading />
 
   return (
     <div

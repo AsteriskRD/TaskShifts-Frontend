@@ -1,17 +1,13 @@
 "use client";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { Poppins } from "next/font/google";
-import { useRouter } from "next/navigation";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 export default function VerifyEmailPage() {
-  const router = useRouter();
-  const onSubmit = (e) => {
-    e.preventDefault();
-    router.push("success-verify");
-   };
+ 
   return (
     <div className="flex flex-col  items-center justify-center min-h-screen bg-accent-50">
       <div className=" bg-white p-8 md:max-w-md max-w-sm rounded-2xl shadow-lg flex flex-col items-center text-center gap-6">
