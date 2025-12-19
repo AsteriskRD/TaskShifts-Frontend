@@ -3,6 +3,8 @@ import { Inter, Poppins } from "next/font/google";
 import LandingPageCard from "./re-usable-compnents/LandingPageCard";
 import Image from "next/image";
 import confidentwoman from "../../images/confidentwoman.png";
+import barb from "../../images/barb.png";
+import righti from "../../images/righti.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,65 +45,77 @@ const cards = [
 
 const ServiceProvider = () => {
   return (
-    <div className="px-6  sm:px-12 md:px-10 pb-12">
-      <div className="">
-        <div className="md:flex gap-40 justify-between  ">
-          <div className="  ">
-            <Image data-aos="zoom-out-up"
-              className="object contain "
-              alt="handshake"
-              src={confidentwoman}
-              width={500}
-              height={500}
-            />
-          </div>
-          <div className="md:flex hidden flex-col">
-            <h1
-              className={`font-extrabold text-black text-3xl ${poppins.className}`}
-            >
-              For <span className="text-[#FF6815]">Service Providers</span>
-            </h1>
-            <p
-              className={`font-light text-sm text-black py-3 ${inter.className}`}
-            >
-              Grow Your Business With Ease
-            </p>
-            <div className="w-full">
-              <div className="">
-                {cards.map((card) => (
-                  <div className="bg-white rounded-md py-1 my-1" key={card.id}>
-                    <LandingPageCard
-                      num={card.no}
-                      head={card.intro}
-                      text={card.desc}
-                    />
-                  </div>
-                ))}
+    <div className="relative">
+      <div className="absolute right-0 bottom-0">
+        <Image src={righti} width={350} alt="right decoration" />
+      </div>
+      <div className="px-6  sm:px-12 md:px-10 pb-36 md:pb-12 ">
+        <div className="">
+          <div className="md:flex w-full  ">
+            <div className=" md:w-1/2">
+              <Image
+                data-aos="zoom-out-up"
+                className="object contain "
+                alt="handshake"
+                src={barb}
+                width={400}
+            
+              />
+            </div>
+            <div className="md:flex md:w-1/2 md:pr-20 pr-0  hidden flex-col">
+              <h1
+                className={`font-extrabold text-black text-3xl ${poppins.className}`}
+              >
+                For <span className="text-[#FF6815]">Service Providers</span>
+              </h1>
+              <p
+                className={`font-light text-sm text-black py-3 ${inter.className}`}
+              >
+                Grow Your Business With Ease
+              </p>
+              <div className="w-full">
+                <div className="">
+                  {cards.map((card) => (
+                    <div
+                      className="bg-white rounded-md py-1 my-1"
+                      key={card.id}
+                    >
+                      <LandingPageCard
+                        num={card.no}
+                        head={card.intro}
+                        text={card.desc}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-          <div className="flex pt-8 md:hidden flex-col">
-            <h1
-              className={`font-extrabold text-black text-3xl ${poppins.className}`}
-            >
-              For <span className="text-[#FF6815]">Service Providers</span>
-            </h1>
-            <p
-              className={`font-light text-sm text-black py-3 ${inter.className}`}
-            >
-              Grow Your Business With Ease
-            </p>
-            <div className="w-full">
-              <div className="">
-                {cards.map((card) => (
-                  <div className="bg-white rounded-md py-1 my-1" key={card.id}>
-                    <LandingPageCard
-                      num={card.no}
-                      head={card.intro}
-                      text={card.desc}
-                    />
-                  </div>
-                ))}
+            <div className="flex pt-8 md:hidden flex-col">
+              <h1
+                className={`font-extrabold text-black text-3xl ${poppins.className}`}
+              >
+                For <span className="text-[#FF6815]">Service Providers</span>
+              </h1>
+              <p
+                className={`font-light text-sm text-black py-3 ${inter.className}`}
+              >
+                Grow Your Business With Ease
+              </p>
+              <div className="w-full">
+                <div className="">
+                  {cards.map((card) => (
+                    <div
+                      className="bg-white rounded-md py-1 my-1"
+                      key={card.id}
+                    >
+                      <LandingPageCard
+                        num={card.no}
+                        head={card.intro}
+                        text={card.desc}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

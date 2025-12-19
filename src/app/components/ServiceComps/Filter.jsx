@@ -45,12 +45,7 @@ const Filter = () => {
           </div>
         </div>
 
-        <div className="bg-[#B4B4C280] flex mx-4  my-12 py-3 md:mx-auto md:w-1/2 relative items-center gap-3 px-4 rounded-full">
-          <FiSearch />
-          <p className={`${inter.className} text-[#505057]`}>
-            What service are you looking for?
-          </p>
-        </div>
+       
       </div>
     </div>
   );
