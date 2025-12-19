@@ -7,19 +7,30 @@ export default function ClientLanding() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
+    // TEMPORARY BYPASS
+    setUser({
+      name: "Test Client",
+      role: "client",
+    });
+
+    /*
     const activeUser = JSON.parse(localStorage.getItem("activeUser"));
     if (!activeUser || activeUser.role !== "client") {
       router.push("/login");
     } else {
       setUser(activeUser);
     }
-  }, [router]);
+    */
+  }, []);
 
   const handleLogout = () => {
     localStorage.removeItem("activeUser");
     router.push("/login");
   };
 
+  const handleDash = () =>{
+    router.push("/client/dashboard")
+  }
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-green-50">
       {user ? (
@@ -32,10 +43,12 @@ export default function ClientLanding() {
           </p>
           <button
             onClick={handleLogout}
-            className="mt-6 px-6 py-2 bg-green-700 text-white rounded hover:bg-green-800"
+            className="mt-6 px-6 py-2 bg-secondary-700 text-white rounded hover:bg-secondary-800"
           >
             Logout
           </button>
+
+          <button onClick={handleDash} className="cursor-pointer mt-6 px-6 py-2 bg-primary-700 text-white rounded hover:bg-primary-800"> Go to Dashboard </button>
         </>
       ) : (
         <p>Loading...</p>
@@ -43,3 +56,4 @@ export default function ClientLanding() {
     </main>
   );
 }
+
