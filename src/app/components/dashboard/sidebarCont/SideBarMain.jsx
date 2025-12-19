@@ -9,8 +9,7 @@ import { MdGeneratingTokens } from "react-icons/md";
 import { MdOutlineMessage } from "react-icons/md";
 import { MdOutlineRateReview } from "react-icons/md";
 
-
-import logo from "../../../images/logo.svg"
+import logo from "../../../images/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
 import SideBarNav from "./SideBarNav";
@@ -18,7 +17,7 @@ import SideBarNav from "./SideBarNav";
 const navLinks = [
   {
     id: 1,
-    icons: <TbDashboardOff  size={20}/>,
+    icons: <TbDashboardOff size={20} />,
     name: "Dashboard",
     link: "/providers",
   },
@@ -36,19 +35,19 @@ const navLinks = [
   },
   {
     id: 4,
-    icons: <IoMdTime size={20}/>,
+    icons: <IoMdTime size={20} />,
     name: "History",
     link: "/providers/history",
   },
   {
     id: 5,
-    icons: <RiSecurePaymentLine size={20}/>,
+    icons: <RiSecurePaymentLine size={20} />,
     name: "Payment",
     link: "/providers/payment",
   },
   {
     id: 6,
-    icons: <BiMoneyWithdraw  size={20}/>,
+    icons: <BiMoneyWithdraw size={20} />,
     name: "Withdraw",
     link: "/providers/withdraw",
   },
@@ -66,23 +65,23 @@ const navLinks = [
   },
   {
     id: 9,
-    icons: <MdOutlineRateReview  size={20}/>,
+    icons: <MdOutlineRateReview size={20} />,
     name: "Reviews",
     link: "/providers/reviews",
   },
-  
-
 ];
 const SideBarMain = () => {
   return (
     <div className="">
-      <div className="py-6 flex justify-center">
-        <Image width={80} src={logo} alt="logo" />
-      </div>
+      <Link href="/">
+        <div className="py-6 flex justify-center">
+          <Image width={80} src={logo} alt="logo" />
+        </div>
+      </Link>
       <div className="space-y-8">
         {navLinks.map((link) => (
           <div className="" key={link.id}>
-            <SideBarNav link={link}/>
+            <SideBarNav link={link} />
           </div>
         ))}
       </div>
@@ -91,5 +90,3 @@ const SideBarMain = () => {
 };
 
 export default SideBarMain;
-
-

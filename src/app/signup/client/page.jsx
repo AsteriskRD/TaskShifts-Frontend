@@ -1,104 +1,52 @@
 "use client";
 
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import * as yup from "yup";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import Select from "react-select";
 
-// ✅ Dummy Country & City Data
-const countryData = [
-  {
-    label: "Nigeria 🇳🇬",
-    value: "NG",
-    cities: ["Lagos", "Abuja", "Port Harcourt", "Benin City"],
-    phoneFormat: "+234 XXX XXX XXXX",
-  },
-  {
-    label: "United States 🇺🇸",
-    value: "US",
-    cities: ["New York", "Los Angeles", "Chicago", "Houston"],
-    phoneFormat: "+1 (XXX) XXX-XXXX",
-  },
-  {
-    label: "United Kingdom 🇬🇧",
-    value: "UK",
-    cities: ["London", "Manchester", "Birmingham", "Liverpool"],
-    phoneFormat: "+44 XXXX XXXXXX",
-  },
-];
-
-// ✅ Yup Validation Schema
-const schema = yup.object().shape({
-  firstname: yup.string().required("First name is required"),
-  lastname: yup.string().required("Last name is required"),
-  email: yup
-    .string()
-    .email("Enter a valid email address")
-    .required("Email is required"),
-  number: yup
-    .string()
-    .required("Phone number is required")
-    .matches(/^[0-9+\s()-]+$/, "Invalid phone number format"),
-  country: yup.string().required("Country is required"),
-  city: yup.string().required("City is required"),
-  zip: yup
-    .string()
-    .required("ZIP/Postal Code is required")
-    .matches(/^[0-9A-Za-z-]+$/, "Invalid ZIP Code"),
-  address: yup.string().required("Address is required"),
-  password: yup
-    .string()
-    .required("Password is required")
-    .min(8, "Password must be at least 8 characters long")
-    .matches(/[A-Z]/, "Include at least one uppercase letter")
-    .matches(/[a-z]/, "Include at least one lowercase letter")
-    .matches(/[0-9]/, "Include at least one number")
-    .matches(/[^a-zA-Z0-9]/, "Include at least one special character"),
-  confirmPassword: yup
-    .string()
-    .oneOf([yup.ref("password")], "Passwords must match")
-    .required("Please confirm your password"),
-  agree: yup
-    .bool()
-    .oneOf([true], "You must accept Terms and Conditions to continue"),
-});
-
 export default function SignUpPage() {
-  const router = useRouter();
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [selectedCountry, setSelectedCountry] = useState(null);
-  const [cities, setCities] = useState([]);
-  const [phoneFormat, setPhoneFormat] = useState("");
-
-  const {
-    register,
-    handleSubmit,
-    setValue,
-    formState: { errors },
-  } = useForm({
-    resolver: yupResolver(schema),
+  const [mounted, setMounted] = useState(false);
+  const [formDetails, setFormDetails] = useState({
+    firstname: "",
+    lastname: "",
+    country: "",
+    state: "",
+    city: "",
+    zip: "",
+    email: "",
+    number: "",
+    password: "",
+    confirmPassword: "",
+    agree: false,
   });
+  const router = useRouter();
 
-  const handleCountryChange = (value) => {
-    setSelectedCountry(value);
-    setCities(value.cities || []);
-    setPhoneFormat(value.phoneFormat);
-    setValue("country", value.label);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
+
+  const onChangeHandler = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormDetails((prevDetails) => ({
+      ...prevDetails,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+
+    console.log(formDetails);
   };
 
-  const onSubmit = (data) => {
-    console.log(data);
-    localStorage.setItem("user", JSON.stringify(data));
-    alert("Signup successful! Please check your email for verification.");
-    router.push("/verify-email");
-  };
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    router.push('/verify-email')
+
+
+  }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen w-full bg-accent-50 lg:px-20 md:pt-20 pt-10 px-4">
+    <div className="flex flex-col max-w-[1440px] mx-auto items-center justify-center min-h-screen w-full bg-accent-50 md:px-10 md:pt-30 pt-10  px-4">
       {/* Header Section */}
       <div className="bg-primary-600 text-white p-6 w-full mb-16">
         <h1 className="text-3xl font-bold mb-2">Client</h1>
@@ -106,10 +54,7 @@ export default function SignUpPage() {
       </div>
 
       {/* Signup Form */}
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-3xl my-10"
-      >
+      <form onSubmit={handleSubmit} className="bg-white p-8 rounded-2xl shadow-xl w-full max-w-3xl my-10">
         <h2 className="text-3xl font-bold mb-4 text-center">
           Register as a <span className="text-secondary-400">Client</span>
         </h2>
@@ -123,23 +68,21 @@ export default function SignUpPage() {
             <label className="block text-gray-700 mb-1">First Name</label>
             <input
               type="text"
-              {...register("firstname")}
+              name="firstname"
+              value={formDetails.firstname}
+              onChange={onChangeHandler}
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            {errors.firstname && (
-              <p className="text-red-500 text-sm">{errors.firstname.message}</p>
-            )}
           </div>
           <div>
             <label className="block text-gray-700 mb-1">Last Name</label>
             <input
+              name="lastname"
+              value={formDetails.lastname}
+              onChange={onChangeHandler}
               type="text"
-              {...register("lastname")}
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            {errors.lastname && (
-              <p className="text-red-500 text-sm">{errors.lastname.message}</p>
-            )}
           </div>
         </div>
 
@@ -148,33 +91,21 @@ export default function SignUpPage() {
           <div>
             <label className="block text-gray-700 mb-1">Country</label>
             <Select
-              options={countryData}
-              value={selectedCountry}
-              onChange={handleCountryChange}
+              onChange={onChangeHandler}
               placeholder="Select your country"
             />
-            {errors.country && (
-              <p className="text-red-500 text-sm">{errors.country.message}</p>
-            )}
           </div>
 
           <div>
             <label className="block text-gray-700 mb-1">City</label>
             <select
-              {...register("city")}
+              name="city"
+              value={formDetails.city}
+              onChange={onChangeHandler}
               className="w-full border p-2 rounded-md focus:outline-blue-400"
-              disabled={!cities.length}
             >
               <option value="">Select city</option>
-              {cities.map((city) => (
-                <option key={city} value={city}>
-                  {city}
-                </option>
-              ))}
             </select>
-            {errors.city && (
-              <p className="text-red-500 text-sm">{errors.city.message}</p>
-            )}
           </div>
         </div>
 
@@ -184,12 +115,11 @@ export default function SignUpPage() {
             <label className="block text-gray-700 mb-1">Address</label>
             <input
               type="text"
-              {...register("address")}
+              name="address"
+              value={formDetails.address}
+              onChange={onChangeHandler}
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            {errors.address && (
-              <p className="text-red-500 text-sm">{errors.address.message}</p>
-            )}
           </div>
           <div>
             <label className="block text-gray-700 mb-1">
@@ -197,12 +127,11 @@ export default function SignUpPage() {
             </label>
             <input
               type="text"
-              {...register("zip")}
+              name="zip"
+              value={formDetails.zip}
+              onChange={onChangeHandler}
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            {errors.zip && (
-              <p className="text-red-500 text-sm">{errors.zip.message}</p>
-            )}
           </div>
         </div>
 
@@ -211,25 +140,22 @@ export default function SignUpPage() {
           <div>
             <label className="block text-gray-700 mb-1">Phone Number</label>
             <input
+              name="number"
+              value={formDetails.number}
+              onChange={onChangeHandler}
               type="text"
-              {...register("number")}
-              placeholder={phoneFormat || "Enter phone number"}
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            {errors.number && (
-              <p className="text-red-500 text-sm">{errors.number.message}</p>
-            )}
           </div>
           <div>
             <label className="block text-gray-700 mb-1">Email</label>
             <input
+              name="email"
+              value={formDetails.email}
+              onChange={onChangeHandler}
               type="text"
-              {...register("email")}
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm">{errors.email.message}</p>
-            )}
           </div>
         </div>
 
@@ -239,42 +165,30 @@ export default function SignUpPage() {
           <div className="relative">
             <label className="block text-gray-700 mb-1">Password</label>
             <input
-              type={showPassword ? "text" : "password"}
-              {...register("password")}
+              type="password"
+              name="password"
+              value={formDetails.password}
+              onChange={onChangeHandler}
+              // type={showPassword ? "text" : "password"}
+
               placeholder="Enter password"
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            <span
-              className="absolute right-3 top-9 text-gray-500 cursor-pointer"
-              onClick={() => setShowPassword((prev) => !prev)}
-            >
-              {showPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
-            {errors.password && (
-              <p className="text-red-500 text-sm">{errors.password.message}</p>
-            )}
           </div>
 
           {/* Confirm Password */}
           <div className="relative">
             <label className="block text-gray-700 mb-1">Confirm Password</label>
             <input
-              type={showConfirmPassword ? "text" : "password"}
-              {...register("confirmPassword")}
+              type="password"
+              name="confirmPassword"
+              value={formDetails.confirmPassword}
+              onChange={onChangeHandler}
+              // type={showConfirmPassword ? "text" : "password"}
+
               placeholder="Re-enter password"
               className="w-full border p-2 rounded-md focus:outline-blue-400"
             />
-            <span
-              className="absolute right-3 top-9 text-gray-500 cursor-pointer"
-              onClick={() => setShowConfirmPassword((prev) => !prev)}
-            >
-              {showConfirmPassword ? <FaEyeSlash /> : <FaEye />}
-            </span>
-            {errors.confirmPassword && (
-              <p className="text-red-500 text-sm">
-                {errors.confirmPassword.message}
-              </p>
-            )}
           </div>
         </div>
 
@@ -282,7 +196,9 @@ export default function SignUpPage() {
         <div className="flex items-center mb-6">
           <input
             type="checkbox"
-            {...register("agree")}
+            name="terms"
+            checked={formDetails.terms}
+            onChange={onChangeHandler}
             className="mr-2 accent-primary-600"
           />
           <p className="text-gray-700 text-sm">
@@ -296,11 +212,7 @@ export default function SignUpPage() {
             </span>
           </p>
         </div>
-        {errors.agree && (
-          <p className="text-red-500 text-sm mb-4">{errors.agree.message}</p>
-        )}
 
-        {/* Submit */}
         <button
           type="submit"
           className="w-full bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-md transition"
