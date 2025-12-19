@@ -3,6 +3,9 @@ import { Inter, Poppins } from "next/font/google";
 import LandingPageCard from "./re-usable-compnents/LandingPageCard";
 import Image from "next/image";
 import smiling from "../../images/smilingirl.png";
+import woman from "../../images/smilwo.png";
+
+import left from "../../images/lefti.png";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -43,100 +46,111 @@ const cards = [
 
 const OnePlatform = () => {
   return (
-    <div className="px-6 relative sm:px-12 md:px-10">
-     <div>
-         <div>
-        <h1
-          data-aos="flip-left"
-          className={`${poppins.className} text-black text-center text-3xl font-bold pt-14 pb-6`}
-        >
-          {" "}
-          <span className="text-[#FF6815]">One</span> Platform,{" "}
-          <span className="text-[#FF6815]">Two</span> Paths, Hire or Get Hired
-        </h1>
-        <p className={`${inter.className} pb-4 text-center text-base`}>
-          Whether you are looking for trusted professionals or new talent,{" "}
-          <br />
-          grow , TaskShift brings you together safely
-        </p>
+    <div className="relative">
+      <div className="absolute left-0 top-0">
+        <Image src={left} width={400} alt="left decoration" />
       </div>
-      <div className="">
-        <div className="md:flex gap-40 justify-between  py-14 ">
-          <div className=" block md:hidden ">
-            <Image
-              data-aos="zoom-in-down"
-              className="object contain "
-              alt="handshake"
-              src={smiling}
-              width={500}
-              height={500}
-            />
-          </div>
-          <div className="md:flex hidden flex-col">
+      <div className="px-6 relative sm:px-10 md:px-10">
+        <div>
+          <div>
             <h1
-              className={`font-extrabold text-black text-3xl ${poppins.className}`}
+              data-aos="flip-left"
+              className={`${poppins.className} text-black text-center text-3xl font-bold md:pt-14 pt-30 pb-6`}
             >
-              For <span className="text-[#FF6815]">Clients</span>
+              {" "}
+              <span className="text-[#FF6815]">One</span> Platform,{" "}
+              <span className="text-[#FF6815]">Two</span> Paths, Hire or Get
+              Hired
             </h1>
-            <p
-              className={`font-light text-sm text-black py-3 ${inter.className}`}
-            >
-              Get Things Done Fast!
+            <p className={`${inter.className} pb-4 text-center text-base`}>
+              Whether you are looking for trusted professionals or new talent,{" "}
+              <br />
+              grow , TaskShift brings you together safely
             </p>
-            <div className="w-full">
-              <div className="">
-                {cards.map((card) => (
-                  <div className="bg-white rounded-md py-1 my-1" key={card.id}>
-                    <LandingPageCard
-                      num={card.no}
-                      head={card.intro}
-                      text={card.desc}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
-          <div className="flex md:hidden pt-10 flex-col">
-            <h1
-              className={`font-extrabold text-black text-3xl ${poppins.className}`}
-            >
-              For <span className="text-[#FF6815]">Clients</span>
-            </h1>
-            <p
-              className={`font-light text-sm text-black py-3 ${inter.className}`}
-            >
-              Get Things Done Fast!
-            </p>
-            <div className="w-full">
-              <div className="">
-                {cards.map((card) => (
-                  <div className="bg-white rounded-md py-1 my-1" key={card.id}>
-                    <LandingPageCard
-                      num={card.no}
-                      head={card.intro}
-                      text={card.desc}
-                    />
-                    
-                  </div>
-                ))}
+          <div className="">
+            <div className="md:flex gap-40 justify-between  py-14 ">
+              <div className=" block md:hidden ">
+                <Image
+                  data-aos="zoom-in-down"
+                  className="object contain "
+                  alt="handshake"
+                  src={woman}
+                  width={500}
+                  height={500}
+                />
               </div>
-            </div>
-          </div>
+              <div className="md:flex hidden flex-col">
+                <h1
+                  className={`font-extrabold text-black text-3xl ${poppins.className}`}
+                >
+                  For <span className="text-[#FF6815]">Clients</span>
+                </h1>
+                <p
+                  className={`font-light text-sm text-black py-3 ${inter.className}`}
+                >
+                  Get Things Done Fast!
+                </p>
+                <div className="w-full">
+                  <div className="">
+                    {cards.map((card) => (
+                      <div
+                        className="bg-white rounded-md py-1 my-1"
+                        key={card.id}
+                      >
+                        <LandingPageCard
+                          num={card.no}
+                          head={card.intro}
+                          text={card.desc}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="flex md:hidden pt-10 flex-col">
+                <h1
+                  className={`font-extrabold text-black text-3xl ${poppins.className}`}
+                >
+                  For <span className="text-[#FF6815]">Clients</span>
+                </h1>
+                <p
+                  className={`font-light text-sm text-black py-3 ${inter.className}`}
+                >
+                  Get Things Done Fast!
+                </p>
+                <div className="w-full">
+                  <div className="">
+                    {cards.map((card) => (
+                      <div
+                        className="bg-white rounded-md py-1 my-1"
+                        key={card.id}
+                      >
+                        <LandingPageCard
+                          num={card.no}
+                          head={card.intro}
+                          text={card.desc}
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
-          <div className=" md:block hidden ">
-            <Image
-              data-aos="zoom-in-down"
-              className="object contain "
-              alt="handshake"
-              src={smiling}
-              width={500}
-              height={500}
-            />
+              <div className=" md:block hidden ">
+                <Image
+                  data-aos="zoom-in-down"
+                  className="object contain "
+                  alt="handshake"
+                  src={woman}
+                  width={700}
+                  height={700}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
-     </div>
     </div>
   );
 };

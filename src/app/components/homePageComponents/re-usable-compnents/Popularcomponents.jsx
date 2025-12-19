@@ -15,9 +15,9 @@ const poppins = Poppins({
 
 const Popularcomponents = ({ item }) => {
   return (
-    <div className="w-74 mx-auto">
+    <div className="w-full max-w-[280px] shadow-gray-400 rounded-t-2xl h-[400px] shadow-md mx-auto">
       <div>
-        <Image width={400}  className="rounded-t-2xl " alt="img" src={item.img} />
+        <Image width={400}  className="rounded-t-2xl bg-white " alt="img" src={item.img} />
       </div>
       <div className="bg-white space-y-2 p-4">
         <h1 className={`${dm_sans.className} font-bold text-[20px]`}>
@@ -31,10 +31,10 @@ const Popularcomponents = ({ item }) => {
       </div>
       <div className="flex p-4 bg-white justify-between py-4">
         <div className="bg-[#F1A008] text-white flex gap-1 items-center rounded-md px-3">
-          <CiStar className="text-white" size={20} /> <span>{item.rating}</span>
+          <CiStar className="text-white text-sm" size={20} /> <span>{item.rating}</span>
         </div>
         <div>
-          <button className="bg-[#003271] rounded-full text-white px-3 py-1.5">
+          <button className="bg-[#003271] rounded-full text-white text-sm px-3 py-1.5">
             {item.btn}
           </button>
         </div>

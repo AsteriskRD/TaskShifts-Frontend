@@ -1,20 +1,16 @@
 "use client";
 import { MdOutlineMarkEmailRead } from "react-icons/md";
 import { Poppins } from "next/font/google";
-import { useRouter } from "next/navigation";
+
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 export default function VerifyEmailPage() {
-  const router = useRouter();
-  const onSubmit = (e) => {
-    e.preventDefault();
-    router.push("success-verify");
-   };
+ 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-accent-50">
-      <div className=" bg-white p-8 rounded-2xl shadow-lg flex flex-col items-center text-center gap-6">
+    <div className="flex flex-col  items-center justify-center min-h-screen bg-accent-50">
+      <div className=" bg-white p-8 md:max-w-md max-w-sm rounded-2xl shadow-lg flex flex-col items-center text-center gap-6">
         <h1 className={`${poppins.className} font-bold text-xl`}>
           Check Your Mail!
         </h1>
@@ -26,11 +22,7 @@ export default function VerifyEmailPage() {
           verification email from us.
         </p>
 
-        <button onClick={onSubmit}
-          className={`${poppins.className} bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-md transition`}
-        >
-          Verify email confirmation
-        </button>
+       
       </div>
     </div>
   );
