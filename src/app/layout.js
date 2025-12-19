@@ -1,3 +1,4 @@
+
 "use client";
 import "./globals.css";
 import "aos/dist/aos.css";
@@ -9,10 +10,12 @@ import Aos from "aos";
 import { usePathname } from "next/navigation";
 import { ToastContainer } from "react-toastify";
 
+
 export default function RootLayout({ children }) {
   const pathname = usePathname();
 
-  const HideHeaderFooter = pathname.startsWith("/providers") || pathname.startsWith("/client");
+  const HideHeaderFooter = pathname.startsWith("/providers");
+
 
   useEffect(() => {
     Aos.init({});
@@ -22,12 +25,12 @@ export default function RootLayout({ children }) {
       <body className="">
         <ToastContainer />
         <Context>
-          {!HideHeaderFooter && <Header />}
-          {children}
-          <Footer />
+            {!HideHeaderFooter && <Header />}
+            {children}
+            <Footer/>
         </Context>
-      </body>
+        
+        </body>
     </html>
   );
 }
-
