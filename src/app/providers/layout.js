@@ -1,9 +1,14 @@
+"use client";
 import React from "react";
 import SideBar from "../components/dashboard/SideBar";
 import SideBarMain from "../components/dashboard/sidebarCont/SideBarMain";
 import SideBarFooter from "../components/dashboard/sidebarCont/SideBarFooter";
+import { useState } from "react";
 
 const ProviderLayout = ({ children }) => {
+
+  const [show, setShow] = useState(false)
+  
   return (
     <div className="relative px-10 ">
       <div className="grid grid-cols-[220px_1fr] bg-gray-100">
