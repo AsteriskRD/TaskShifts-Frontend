@@ -1,3 +1,4 @@
+import { headers } from "next/headers";
 import httpClient from "./axiosInstance";
 
 export const register = async (data) => {
@@ -160,3 +161,19 @@ export const updateProfile = (data) =>
         "An error occurred while updating profile"
     );
   });
+
+  export const kycStepOne = (token) => {
+    try {
+      const res = httpClient.post("/kyc/step1", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      });
+      return res;
+      
+    } catch (error) {
+      
+    }
+  } 
+    
+  

@@ -50,6 +50,9 @@
   color: var(--color-primary-500);
   
 }
+.italic {
+  font-style: italic;
+}
 
 @layer base {
   * {

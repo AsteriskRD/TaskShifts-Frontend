@@ -17,9 +17,9 @@ const KycStepper = ({ currentStep }) => {
 
           return (
             <div key={step.id} className="flex flex-col items-center flex-1">
-              {/* Top Row: Line + Circle */}
+    
               <div className="flex items-center w-full">
-                {/* Left Line */}
+                
                 {index > 0 && (
                   <div
                     className={`h-1 flex-1 ${
@@ -28,7 +28,7 @@ const KycStepper = ({ currentStep }) => {
                   ></div>
                 )}
 
-                {/* Circle */}
+                
                 <div
                   className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium mx-2
                   ${
@@ -43,7 +43,7 @@ const KycStepper = ({ currentStep }) => {
                   {index + 1}
                 </div>
 
-                {/* Right Line */}
+                
                 {index < steps.length - 1 && (
                   <div
                     className={`h-1 flex-1 ${
@@ -53,7 +53,7 @@ const KycStepper = ({ currentStep }) => {
                 )}
               </div>
 
-              {/* Title */}
+          
               <p className="mt-3 text-center text-xs sm:text-sm md:text-base leading-tight">
                 {step.title}
               </p>
