@@ -22,9 +22,7 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-
 const VerifyDocs = ({ onVerificationComplete }) => {
-  
   const [stage, setStage] = useState("form");
 
   const handleSubmit = (e) => {
@@ -33,7 +31,7 @@ const VerifyDocs = ({ onVerificationComplete }) => {
 
     setTimeout(() => {
       setStage("success");
-    }, 3000)
+    }, 3000);
   };
 
   if (stage === "verifying") return <DocVerifyModal />;
@@ -41,7 +39,10 @@ const VerifyDocs = ({ onVerificationComplete }) => {
   if (stage === "success")
     return (
       <DocSuccessModal
-        onContinue={onVerificationComplete}
+        onContinue={() => {
+          localStorage.setItem("kyc_current_step", "2");
+          onVerificationComplete();
+        }}
       />
     );
 
@@ -222,13 +223,15 @@ const VerifyDocs = ({ onVerificationComplete }) => {
               address
             </p>
           </div>
-         
         </div>
-         <div className="mt-8 w-full  mx-auto">
-            <button  type="submit"  className="bg-[#003271]  cursor-pointer rounded-full py-2 text-white w-full md:px-10 px-4">
-              Continue
-            </button>
-          </div>
+        <div className="mt-8 w-full  mx-auto">
+          <button
+            type="submit"
+            className="bg-[#003271]  cursor-pointer rounded-full py-2 text-white w-full md:px-10 px-4"
+          >
+            Continue
+          </button>
+        </div>
       </div>
     </form>
   );

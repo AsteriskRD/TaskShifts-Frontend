@@ -12,7 +12,7 @@ import Button from "../globalComponents/Button";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 
 const dm_sans = DM_Sans({
@@ -74,7 +74,16 @@ const cards = [
 
 const DashBoardIntro = () => {
   const [show, setShow] = useState(false);
+  const [user, setUser] = useState(null);
+
   const router = useRouter();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const seeShow = () => {
     setShow((show) => !show);
@@ -86,7 +95,7 @@ const DashBoardIntro = () => {
         <p
           className={`${poppins.className} text-[#737380] font-medium text-sm`}
         >
-          Hi Mercy, welcome back to GigLink admin!
+          Hi <span className="font-bold text-black">{user?.firstName  || "there"},</span> welcome back to GigLink!
         </p>
       </div>
 

@@ -32,7 +32,7 @@ export default function LoginPage() {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
-    console.log(loginDetails);
+   
   };
 
   const onSubmitHandler = async (e) => {
@@ -49,7 +49,7 @@ export default function LoginPage() {
       const response = await login(loginDetails);
       toast.success("Login successful.");
       console.log(response);
-      const { accessToken } = response.data;
+      const { accessToken, user } = response.data;
 
       if (!response) {
         toast.error("Invalid credentials.");
@@ -63,6 +63,8 @@ export default function LoginPage() {
         } else {
           sessionStorage.setItem("accessToken", accessToken);
         }
+
+        localStorage.setItem("user", JSON.stringify(user));
 
         const getProfileData = await getProfile(accessToken);
         const profile = getProfileData.data.user

@@ -73,7 +73,7 @@ export default function ProviderSignup() {
       toast.error("Enter a valid email.");
       return setLoading(false);
     }
-    if(!providerDetails){
+    if (!providerDetails) {
       toast.error("All fields are required.");
       return setLoading(false);
     }
@@ -101,7 +101,6 @@ export default function ProviderSignup() {
       return setLoading(false);
     }
 
-    
     const payload = {
       userType: "provider",
       email: providerDetails.email,
@@ -127,14 +126,16 @@ export default function ProviderSignup() {
         website: providerDetails.website,
         serviceDescription: providerDetails.serviceDescription,
       },
-        redirectUrl: `${window.location.origin}/link-verify-email`,
+      redirectUrl: `${window.location.origin}/link-verify-email`,
     };
 
     console.log(" Payload sent:", payload);
 
     try {
       const response = await register(payload);
-      console.log("RESPONSE:", response);
+      console.log("RESPONSE from signup:", response);
+      console.log("SIGNUP STATUS:", response.status);
+      console.log("SIGNUP DATA:", response.data);
 
       if (!response) throw new Error("No response from server.");
 
@@ -150,8 +151,8 @@ export default function ProviderSignup() {
       setLoading(false);
     }
   };
-  
-  if(loading) return <Loading />
+
+  if (loading) return <Loading />;
 
   return (
     <div

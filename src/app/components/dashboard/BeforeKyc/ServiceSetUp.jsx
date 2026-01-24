@@ -2,7 +2,6 @@
 import React from "react";
 import { DM_Sans, Inter, Poppins } from "next/font/google";
 
-
 const dm_sans = DM_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -17,11 +16,14 @@ const poppins = Poppins({
   weight: ["400", "500", "600", "700"],
 });
 
-const ServiceSetup = ({onFinish}) => {
-
-    const onSubmitHandler = (e) => {
+const ServiceSetup = ({ onFinish }) => {
+  const onSubmitHandler = (e) => {
     e.preventDefault();
-    onFinish();
+
+    // localStorage.setItem("kyc_current_step", "3");
+    // onFinish();
+
+    // alert("Service setup completed. Proceeding to dashboard.");
   };
 
   return (
@@ -105,8 +107,6 @@ const ServiceSetup = ({onFinish}) => {
               rows="5"
               defaultValue="Describe your service in details"
             />
-              
-            
           </section>
 
           <div className="bg-white px-10 py-9 rounded-2xl my-6">
@@ -223,7 +223,7 @@ const ServiceSetup = ({onFinish}) => {
                 </select>
               </div>
             </div>
-            
+
             <textarea
               className={` ${inter.className} font-semibold italic bg-[#BEC3CA24] text-[#45454599]  w-full py-8 px-4 rounded-2xl my-6`}
               name="service description"
@@ -233,7 +233,6 @@ const ServiceSetup = ({onFinish}) => {
               defaultValue="Describe what's included in this package
             "
             />
-              
           </div>
           <div className="bg-white px-10 py-9 rounded-2xl my-6">
             <h1
@@ -298,12 +297,16 @@ const ServiceSetup = ({onFinish}) => {
               rows="5"
               defaultValue="Short caption or description of the uploaded work"
             />
-              
-            
           </div>
           <div className="bg-white px-10 py-9 rounded-2xl my-6">
-            <h1 className={`${dm_sans.className} p-1 inline-flex bg-[#E6F6FD] text-lg font-medium`}>Additional Settings</h1>
-            <p className={`${poppins.className} font-semibold block pb-2 pt-4`}>Service Description</p>
+            <h1
+              className={`${dm_sans.className} p-1 inline-flex bg-[#E6F6FD] text-lg font-medium`}
+            >
+              Additional Settings
+            </h1>
+            <p className={`${poppins.className} font-semibold block pb-2 pt-4`}>
+              Service Description
+            </p>
             <textarea
               className={` ${inter.className} font-semibold italic bg-[#BEC3CA24] text-[#45454599]  w-full py-8 px-4 rounded-2xl`}
               name="service description"
@@ -312,33 +315,26 @@ const ServiceSetup = ({onFinish}) => {
               rows="5"
               defaultValue="Cancellation Policy (Optional)"
             />
-              
-            
-
           </div>
 
           <div className="flex items-center space-x-4 my-6">
             <input type="checkbox" name="" id="" />
             <div>
-              <h1 className={`${poppins.className} text-sm font-semibold`}
-              >I agree to <span className="text-[#6C757D]">Terms & Conditions</span> and <span className="text-[#6C757D]">Privacy Policy</span></h1>
+              <h1 className={`${poppins.className} text-sm font-semibold`}>
+                I agree to{" "}
+                <span className="text-[#6C757D]">Terms & Conditions</span> and{" "}
+                <span className="text-[#6C757D]">Privacy Policy</span>
+              </h1>
             </div>
           </div>
 
-
-           <button
-              
-              className={`bg-[#003271] cursor-pointer rounded-full py-2 text-white md:px-10 px-4`}
-            >
-              Next
-            </button>
-
-
+          <button
+            className={`bg-[#003271] cursor-pointer rounded-full py-2 text-white md:px-10 px-4`}
+          >
+            Next
+          </button>
         </form>
       </div>
-      
-
-    
     </div>
   );
 };

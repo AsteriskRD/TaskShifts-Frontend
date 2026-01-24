@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+
 import { FaRegBell, FaTimes } from "react-icons/fa";
 import { AiOutlineSearch } from "react-icons/ai";
 import { MdOutlineMessage, MdDeleteOutline, MdOutlinePortrait } from "react-icons/md";
@@ -7,6 +7,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdTime } from "react-icons/io";
 import { TbDashboardOff } from "react-icons/tb";
+import { useState, useEffect } from "react";
 import { AiFillCustomerService } from "react-icons/ai";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { BiMoneyWithdraw } from "react-icons/bi";
@@ -27,6 +28,15 @@ const navLinks = [
 
 const DashboardHeader = () => {
   const [show, setShow] = useState(false);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if( storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+    
+  }, []);
 
  
 
@@ -67,7 +77,7 @@ const DashboardHeader = () => {
           
           <div className="flex items-center gap-3">
             <p className="text-sm">
-              Hello, <span className="font-semibold">Mercy S</span>
+              Hello, <span className="font-semibold">{user?.firstName  }</span>
             </p>
             <div className="w-10 h-10 bg-[#003271] text-white rounded-full flex items-center justify-center">
               <MdOutlinePortrait size={20} />
