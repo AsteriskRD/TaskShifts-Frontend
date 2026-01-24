@@ -4,7 +4,8 @@ import DashBoardIntro from '../components/dashboard/DashBoardIntro'
 
 const ProviderDashboard = () => {
   return (
-    <div className='py-10 max-w-[1440px] px-8 mx-auto'>
+    <div className='py-10  px-8 w-full max-w-full
+'>
         <DashboardHeader/>
         <DashBoardIntro/>
       

@@ -9,7 +9,7 @@ const poppins = Poppins({
 
 const SideBarNav = ({ link }) => {
   return (
-    <Link  href={link} className={` ${poppins.className} text-[#5C5C66] font-medium flex gap-5 items-center  `} >
+    <Link  href={link.link} className={` ${poppins.className} text-[#5C5C66] font-medium flex gap-5 items-center  `} >
       <div>{link.icons}</div>
       <h1>{link.name}</h1>
     </Link>

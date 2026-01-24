@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import { DM_Sans, Poppins, Roboto } from "next/font/google";
 import { VscFolderActive } from "react-icons/vsc";
@@ -12,9 +12,8 @@ import Button from "../globalComponents/Button";
 import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { FaTimes } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
-
 
 const dm_sans = DM_Sans({
   subsets: ["latin"],
@@ -75,11 +74,20 @@ const cards = [
 
 const DashBoardIntro = () => {
   const [show, setShow] = useState(false);
+  const [user, setUser] = useState(null);
+
   const router = useRouter();
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      setUser(JSON.parse(storedUser));
+    }
+  }, []);
 
   const seeShow = () => {
     setShow((show) => !show);
-  }
+  };
   return (
     <div className="py-4">
       <div>
@@ -87,7 +95,7 @@ const DashBoardIntro = () => {
         <p
           className={`${poppins.className} text-[#737380] font-medium text-sm`}
         >
-          Hi Mercy, welcome back to GigLink admin!
+          Hi <span className="font-bold text-black">{user?.firstName  || "there"},</span> welcome back to GigLink!
         </p>
       </div>
 
@@ -106,25 +114,29 @@ const DashBoardIntro = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-col px-50 items-center justify-center  text-center">
-        <Image src={prokyc} width={400} alt="img" />
-        <h1 className={`${poppins.className} font-bold text-xl pb-2 pt-8`}>
+      <div className="flex flex-col md:px-50 items-center justify-center  text-center">
+        <Image src={prokyc} className="w-full max-w-md" alt="img" />
+        <h1 className={`${poppins.className} font-bold md:text-xl pb-2 pt-8`}>
           Complete Your KYC to Unlock Your Dashboard
         </h1>
-        <p className={`font-medium ${roboto.className}`}>
+        <p className={`text-sm md:text-base font-medium ${roboto.className}`}>
           To start receiving jobs, managing bookings and earning on GigLink, you
           need to verify your identity and business Information.
         </p>
         <Link
-          className="bg-[#003271] my-4 w-96 text-white rounded-2xl py-2"
+          className="bg-[#003271] my-4 w-full max-w-md
+ text-white rounded-2xl py-2"
           href="/pages-providers/kyc"
         >
           Start KYC Verfication
         </Link>
         <div
-          className={`bg-[#FFE1D0] ${roboto.className} w-96 p-8  rounded-2xl }`}
+          className={`bg-[#FFE1D0] ${roboto.className} w-full max-w-md
+ p-8  rounded-2xl }`}
         >
-          <h1 className="font-extrabold ">Quick Tips to Get Started!!</h1>
+          <h1 className="font-extrabold text-sm md:text-base ">
+            Quick Tips to Get Started!!
+          </h1>
           <ul className="py-2 list-disc space-y-2 w-full">
             <li className="font-light text-xs">
               Complete Your KYC Verify your identity and business details to

@@ -1,3 +1,4 @@
+// import { headers } from "next/headers";
 import httpClient from "./axiosInstance";
 
 export const register = async (data) => {
@@ -6,7 +7,7 @@ export const register = async (data) => {
     return response;
   } catch (error) {
     throw new Error(
-      error.response?.data?.message || "An error occurred during registration"
+      error.response?.data?.message || "An error occurred during registration",
     );
   }
 };
@@ -24,7 +25,7 @@ export const login = async (data) => {
       console.error(
         " Login API error:",
         error.response.status,
-        error.response.data
+        error.response.data,
       );
     } else {
       console.error(" Login API request error:", error.message);
@@ -33,14 +34,17 @@ export const login = async (data) => {
   }
 };
 
-export const verifyEmailLink = async ({email, verificationCode}) => {
+export const verifyEmailLink = async ({ email, verificationCode }) => {
   try {
-    const verifyResponse = await httpClient.post("/users/verify-email", {email, verificationCode});
+    const verifyResponse = await httpClient.post("/users/verify-email", {
+      email,
+      verificationCode,
+    });
     return verifyResponse.data;
   } catch (error) {
     throw new Error(
       error.response?.data?.message ||
-        "An error occurred during email verification, Please retry!"
+        "An error occurred during email verification, Please retry!",
     );
   }
 };
@@ -50,7 +54,7 @@ export const resendVerification = (email) =>
     .catch((error) => {
       throw new Error(
         error.response?.data?.message ||
-          "An error occurred while sending verification email"
+          "An error occurred while sending verification email",
       );
     });
 
@@ -58,7 +62,7 @@ export const changePassword = (data) =>
   httpClient.post("/api/users/change-password", data).catch((error) => {
     throw new Error(
       error.response?.data?.message ||
-        "An error occurred while changing password"
+        "An error occurred while changing password",
     );
   });
 
@@ -71,7 +75,7 @@ export const forgotPassword = async (data) => {
         headers: {
           "Content-Type": "application/json",
         },
-      }
+      },
     );
     return responseForgot;
   } catch (error) {
@@ -79,7 +83,7 @@ export const forgotPassword = async (data) => {
       console.error(
         " Login API error:",
         error.response.status,
-        error.response.data
+        error.response.data,
       );
     } else {
       console.error(" Login API request error:", error.message);
@@ -97,7 +101,7 @@ export const resetPassword = async (token, data) => {
         headers: {
           "Content-Type": "application/json",
         },
-      }
+      },
     );
     return resReset;
   } catch (error) {
@@ -105,7 +109,7 @@ export const resetPassword = async (token, data) => {
       console.error(
         " Login API error:",
         error.response.status,
-        error.response.data
+        error.response.data,
       );
     } else {
       console.error(" Login API request error:", error.message);
@@ -123,7 +127,7 @@ export const logout = async () => {
       console.error(
         " Login API error:",
         error.response.status,
-        error.response.data
+        error.response.data,
       );
     } else {
       console.error(" Login API request error:", error.message);
@@ -136,7 +140,7 @@ export const completeProfile = (data) =>
   httpClient.post("/api/profile/complete-profile", data).catch((error) => {
     throw new Error(
       error.response?.data?.message ||
-        "An error occurred while completing profile"
+        "An error occurred while completing profile",
     );
   });
 
@@ -157,6 +161,32 @@ export const updateProfile = (data) =>
   httpClient.post("/api/profile/update-profile", data).catch((error) => {
     throw new Error(
       error.response?.data?.message ||
-        "An error occurred while updating profile"
+        "An error occurred while updating profile",
     );
   });
+
+export const kycStepOne = async (accessToken, data) => {
+  return httpClient.post("/kyc/step1", data, {
+    headers: {
+      Authorization: `Bearer ${accessToken}`,
+      "Content-Type": "multipart/form-data",
+    },
+  });
+};
+
+export const KycStepTwo = async (accessToken, data) => {
+  try {
+    const res = await httpClient.post("/kyc/step2", data, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        "Content-Type": "multipart/form-data",
+      },
+    });
+    return res; 
+  } catch (error) {
+    throw new Error(
+      error.response?.data?.message ||
+        "An error occurred while submitting KYC Step Two",
+    );
+  }
+};
